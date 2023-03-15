@@ -1,0 +1,228 @@
+accelerator id: 0
+accelerator id: 0
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 432, writes = 1440
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 14232, writes = 3920
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 21952, writes = 17248
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 576, writes = 1440
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 27680, writes = 3920
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 43904, writes = 34496
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 648, writes = 1620
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 28228, writes = 4240
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 44800, writes = 35200
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+accelerator id: 0
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 648, writes = 1620
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 31364, writes = 12080
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 44800, writes = 35592
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 648, writes = 1620
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 34500, writes = 19920
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 48720, writes = 36768
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 648, writes = 1620
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 34628, writes = 20240
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 48800, writes = 36800
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+accelerator id: 0
+accelerator id: 0
+accelerator id: 0
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 4096, writes = 10240
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 648, writes = 1620
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 34628, writes = 20240
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 48800, writes = 36801
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 1040, writes = 3920
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+accelerator id: 0
+accelerator id: 1
+accelerator id: 1
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 1024, writes = 2560
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 1
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 1040, writes = 3920
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 8192, writes = 20480
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 648, writes = 1620
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 34628, writes = 20240
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 48801, writes = 36802
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 1296, writes = 3920
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 2048, writes = 5120
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 1, writes = 2
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 1296, writes = 3920
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+accelerator id: 1
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 3072, writes = 7680
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 2, writes = 3
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 1552, writes = 3920
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 3136, writes = 7840
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 13, writes = 6
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 1568, writes = 3920
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+accelerator id: 1
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 12288, writes = 30720
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 648, writes = 1620
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 34628, writes = 20240
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 48802, writes = 36803
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 1552, writes = 3920
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 12544, writes = 31360
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 648, writes = 1620
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 34628, writes = 20240
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 48803, writes = 36804
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 1568, writes = 3920
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 12560, writes = 31400
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 648, writes = 1620
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 34628, writes = 20240
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 48813, writes = 36807
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 1584, writes = 3960
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+accelerator id: 0
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 72, writes = 180
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 548, writes = 320
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 896, writes = 704
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 104, writes = 260
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 837, writes = 640
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 1472, writes = 1088
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 104, writes = 260
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 965, writes = 960
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 1552, writes = 1120
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 104, writes = 260
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 1093, writes = 1280
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 1632, writes = 1152
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 16, writes = 40
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 104, writes = 260
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 1093, writes = 1280
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 1642, writes = 1155
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 16, writes = 40
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 32, writes = 80
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 104, writes = 260
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 1093, writes = 1280
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 1652, writes = 1158
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 32, writes = 80
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 72, writes = 180
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 548, writes = 320
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 896, writes = 704
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 104, writes = 260
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 837, writes = 640
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 1472, writes = 1088
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 104, writes = 260
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 965, writes = 960
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 1552, writes = 1120
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 104, writes = 260
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 1093, writes = 1280
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 1632, writes = 1152
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 16, writes = 40
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 104, writes = 260
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 1093, writes = 1280
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 1642, writes = 1155
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 16, writes = 40
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============
+Array: b, size = 65536, partitions = 8, word size = 4, reads = 32, writes = 80
+Array: weights, size = 65536, partitions = 8, word size = 4, reads = 104, writes = 260
+Array: inputs1, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+Array: inputs, size = 65536, partitions = 8, word size = 4, reads = 1093, writes = 1280
+Array: results, size = 65536, partitions = 8, word size = 4, reads = 1652, writes = 1158
+Array: a, size = 65536, partitions = 8, word size = 4, reads = 32, writes = 80
+Array: inputs0, size = 65536, partitions = 8, word size = 4, reads = 0, writes = 0
+===============

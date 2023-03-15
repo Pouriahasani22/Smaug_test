@@ -5,7 +5,7 @@
 #include "smaug/operators/smv/smv_kernels.h"
 #include "smaug/operators/smv/smv_accel_pool.h"
 #include "smaug/utility/debug_stream.h"
-
+#include <fstream>
 namespace smaug {
 namespace smv {
 namespace fc {
@@ -53,6 +53,7 @@ void SmvInnerProductOp::runNWA(TiledTensor& inputs,
         // scratchpad. This keeps track of finished neurons and will be used by
         // the kernel for correct offset in the outputs scratchpad.
         int finishedNeurons = 0;
+
         for (int W = 0; W < weightNeuronTiles; W++) {
             // Up to this point, the loop nests do not have data dependency
             // among themselves, and therefore we can run them in parallel. The
@@ -77,22 +78,55 @@ void SmvInnerProductOp::runNWA(TiledTensor& inputs,
                 // case, we send the input tile once and keep the input tile
                 // stationary in the scrachpad, finishing the weight
                 // activation-wise tiles with multiple invocations.
+                //        std::ofstream summary_file;
+
+
                 dout(1) << "Input: " << inputTileIdx
                         << ", weights: " << weightTileIdx
                         << ", output: " << outputTileIdx << "\n";
-                Tensor* inputTile = inputs.getTileWithData(inputTileIdx);
-                Tensor* weightsTile = weights.getTileWithData(weightTileIdx);
-                const TensorShape& inputShape = inputTile->getShape();
-                const TensorShape& weightsShape = weightsTile->getShape();
+                Tensor *inputTile = inputs.getTileWithData(inputTileIdx);
+                Tensor *weightsTile = weights.getTileWithData(weightTileIdx);
+                const TensorShape &inputShape = inputTile->getShape();
+                const TensorShape &weightsShape = weightsTile->getShape();
                 mapArrayToAccel(smv::kInnerProductHw + currAccelIdx, "host_a",
                                 inputTile->data<float16>(),
                                 inputShape.storageSize() * sizeof(float16));
                 mapArrayToAccel(smv::kInnerProductHw + currAccelIdx, "host_b",
                                 weightsTile->data<float16>(),
                                 weightsShape.storageSize() * sizeof(float16));
-                int inputDims[2] = { inputShape[0], inputShape[1] };
-                int weightsDims[2] = { weightsShape[0], weightsShape[1] };
-                int outputDims[2] = { outputShape[0], outputShape[1] };
+                int inputDims[2] = {inputShape[0], inputShape[1]};
+                int weightsDims[2] = {weightsShape[0], weightsShape[1]};
+                int outputDims[2] = {outputShape[0], outputShape[1]};
+                std::cout <<"\n*Inner product"<<std::endl;
+//                std::ofstream summary_file;
+//                summary_file.open("./outputs/nnet_fwd_summary_5", std::ios::app);
+//                if(!summary_file.fail()) {
+//                //summary_file << "\n******Accelerator Id: " <<smv::kInnerProductHw + currAccelIdx<<"*****"<<std::endl;
+//                summary_file << "inputTileIdx: " << inputTileIdx << ",\t";
+//                summary_file << "weightTileIdx: " << weightTileIdx << ",\t";
+//                summary_file << "outputTileIdx: " << outputTileIdx << std::endl;
+//                #if 1
+//                    summary_file<<"input Tile dimension: ";
+//                    for(int j{0};j<2;j++){
+//                        if(inputDims != NULL)
+//                        summary_file << "[" << j << "]: " << inputDims[j]<<"\t";
+//                    }
+//                    summary_file <<"\nweight tile dimension: ";
+//                    for(int j{0};j<2;j++){
+//                        if(weightsDims != NULL)
+//                        summary_file << "[" << j << "]: " << weightsDims[j]<<"\t";
+//                    }
+//                    summary_file <<"\noutput tile dimension: ";
+//                    for(int j{0};j<2;j++){
+//                        if(outputDims != NULL)
+//                        summary_file << "[" << j << "]: " << outputDims[j]<<"\t";
+//                    }
+//                    summary_file << std::endl;
+//                #endif
+//                }
+//                else
+//                    std::cout << "failed to write to summary file"<<std::endl;
+//                summary_file.close();
                 // If the input and weight tiles belong to the same channel
                 // group, then their data will be loaded at the same time into
                 // the spads, so we start from the beginning of the tile.
@@ -142,6 +176,7 @@ void SmvInnerProductOp::runNWA(TiledTensor& inputs,
             finishedNeurons += weights[weightIdx(W, 0)]->getShape()[0];
             currAccelIdx = accelPool.getNextAvailableAccelerator(currAccelIdx);
         }
+
     }
     // Before we leave, make sure all the accelerators have finished.
     accelPool.joinAll();

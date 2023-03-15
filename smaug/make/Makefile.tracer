@@ -25,7 +25,7 @@ TRACER = $(TRACER_HOME)/lib/full_trace.so
 LOGGER = $(TRACER_HOME)/lib/trace_logger.llvm
 GET_LABELED_STMTS = $(TRACER_HOME)/bin/get-labeled-stmts
 
-CPPFLAGS += -DTRACE_MODE -DDMA_MODE -Wno-deprecated-declarations
+CPPFLAGS += -DTRACE_MODE -DDMA_MODE -Wno-deprecated-declarations -g
 LFLAGS += -lz
 
 ################################

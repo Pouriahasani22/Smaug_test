@@ -1,0 +1,46 @@
+===============================
+        Aladdin Results        
+===============================
+Running : ./outputs/test_acc0
+Top level function: store_kernel
+Cycle : 274 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 1.7558 mW
+Idle FU Cycles: 273 cycles
+Avg FU Power: 0.762616 mW
+Avg FU Dynamic Power: 0.415397 mW
+Avg FU leakage Power: 0.347219 mW
+Avg MEM Power: 0.993186 mW
+Avg MEM Dynamic Power: 0.792326 mW
+Avg MEM Leakage Power: 0.20086 mW
+Total Area: 41673.5 uM^2
+FU Area: 28194.9 uM^2
+MEM Area: 13478.6 uM^2
+Num of Shifters (32-bit): 1
+Num of Registers (32-bit): 146
+===============================
+        Aladdin Results        
+===============================
+===============================
+        Aladdin Results        
+===============================
+Running : ./outputs/test_acc0
+Top level function: store_kernel
+Cycle : 273 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 2.55545 mW
+Idle FU Cycles: 272 cycles
+Avg FU Power: 0.764138 mW
+Avg FU Dynamic Power: 0.416919 mW
+Avg FU leakage Power: 0.347219 mW
+Avg MEM Power: 1.79132 mW
+Avg MEM Dynamic Power: 1.59046 mW
+Avg MEM Leakage Power: 0.20086 mW
+Total Area: 41673.5 uM^2
+FU Area: 28194.9 uM^2
+MEM Area: 13478.6 uM^2
+Num of Shifters (32-bit): 1
+Num of Registers (32-bit): 146
+===============================
+        Aladdin Results        
+===============================

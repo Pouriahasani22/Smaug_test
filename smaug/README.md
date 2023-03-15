@@ -23,8 +23,13 @@ levels of abstraction. For example, researchers can:
 If you are using SMAUG in research, we would appreciate a reference to:
 
 Sam (Likun) Xi, Yuan Yao, Kshitij Bhardwaj, Paul Whatmough, Gu-Yeon Wei, and
-David Brooks. 2020. SMAUG: End-to-End Full-Stack Simulation Infrastructure for
-Deep Learning Workloads. J. ACM 0, 0, Article 0 (2020). [PDF to be linked].
+David Brooks. SMAUG: End-to-End Full-Stack Simulation Infrastructure for
+Deep Learning Workloads. ACM Transactions on Architecture and Code
+Optimization, 17, 4, Article 39 (November 2020).
+[https://doi.org/10.1145/3424669](PDF).
+
+API documentation and tutorials are available at
+[https://harvard-acc.github.io/smaug_docs](https://harvard-acc.github.io/smaug_docs).
 
 # Installation #
 
@@ -59,11 +64,35 @@ cd gem5-aladdin && git pull origin master && git submodule update --init --recur
 cd LLVM-Tracer && git pull origin master && cd ..
 cd smaug && git pull origin master && git submodule update --init --recursive && cd ..
 ```
+# Building #
+We need to build gem5-Aladdin. The `-j` parameter controls how many CPUs are
+used. Increase this value to speed up the build, but keep in mind that you may
+run out of memory before you run out of CPUs. Running out of memory or disk space
+can cause mysterious build failures.
+
+```bash
+cd /workspace/gem5-aladdin
+python2.7 `which scons` build/X86/gem5.opt PROTOCOL=MESI_Two_Level_aladdin -j2
+```
+
+And then SMAUG:
+
+```bash
+cd /workspace/smaug
+make all -j8
+```
 
 You are now ready to work with SMAUG. Read on to learn how to run your first
 model.
 
 # Running your first model #
+Run the 4-layer Minerva model with our NVDLA-like backend codenamed *SMV*:
 
-# Resources #
+```bash
+cd /workspace/smaug/experiments/sims/smv/tests/minerva
+sh run.sh
+```
 
+# Tutorials and APIs #
+Documentation for writing new models and building on top of SMAUG can be found at
+[https://harvard-acc.github.io/smaug_docs](https://harvard-acc.github.io/smaug_docs).

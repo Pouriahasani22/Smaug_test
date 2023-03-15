@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
     std::string modelParams;
     int debugLevel = -1;
     std::string lastOutputFile;
-    bool dumpGraph = false;
+    bool dumpGraph = true;
     runningInSimulation = false;
     SamplingInfo sampling;
     std::string samplingLevel = "no";
@@ -29,6 +29,7 @@ int main(int argc, char* argv[]) {
     numAcceleratorsAvailable = 1;
     int numThreads = -1;
     useSystolicArrayWhenAvailable = false;
+    std::cout <<"dumpGraph = true"<<std::endl;
     po::options_description options(
             "SMAUG Usage:  ./smaug model_topo.pbtxt model_params.pb [options]");
     // clang-format off
@@ -148,8 +149,9 @@ int main(int argc, char* argv[]) {
     }
 
     Workspace* workspace = new Workspace();
-    Network* network =
+    Network* network = 
             buildNetwork(modelTopo, modelParams, sampling, workspace);
+    ReferenceBackend::initGlobals();
     SmvBackend::initGlobals();
 
     if (dumpGraph)
@@ -187,6 +189,7 @@ int main(int argc, char* argv[]) {
 
     delete network;
     delete workspace;
+    ReferenceBackend::freeGlobals();
     SmvBackend::freeGlobals();
 
     return 0;

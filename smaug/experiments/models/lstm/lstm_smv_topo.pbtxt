@@ -4,7 +4,7 @@ nodes {
   op: Data
   input_tensors {
     name: "input/input0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 4
@@ -16,7 +16,7 @@ nodes {
   }
   output_tensors {
     name: "input/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 4
@@ -34,7 +34,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "input/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 4
@@ -46,7 +46,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:unstack:split/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 1
@@ -58,7 +58,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:unstack:split/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 1
@@ -70,7 +70,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:unstack:split/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 1
@@ -82,7 +82,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:unstack:split/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 1
@@ -105,7 +105,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:unstack:split/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 1
@@ -117,7 +117,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:unstack:squeeze/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -134,7 +134,7 @@ nodes {
   src_tensors_indices: 1
   input_tensors {
     name: "lstm0:unstack:split/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 1
@@ -146,7 +146,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:unstack:squeeze_1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -163,7 +163,7 @@ nodes {
   src_tensors_indices: 2
   input_tensors {
     name: "lstm0:unstack:split/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 1
@@ -175,7 +175,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:unstack:squeeze_2/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -192,7 +192,7 @@ nodes {
   src_tensors_indices: 3
   input_tensors {
     name: "lstm0:unstack:split/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 1
@@ -204,7 +204,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:unstack:squeeze_3/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -219,7 +219,7 @@ nodes {
   op: Data
   input_tensors {
     name: "data/input0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -230,7 +230,7 @@ nodes {
   }
   output_tensors {
     name: "data/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -249,7 +249,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:unstack:squeeze/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -260,7 +260,7 @@ nodes {
   }
   input_tensors {
     name: "data/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -271,7 +271,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step0:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -288,7 +288,7 @@ nodes {
   op: Data
   input_tensors {
     name: "lstm0:/h"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -299,7 +299,7 @@ nodes {
   }
   output_tensors {
     name: "data_1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -314,7 +314,7 @@ nodes {
   op: Data
   input_tensors {
     name: "data_2/input0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -325,7 +325,7 @@ nodes {
   }
   output_tensors {
     name: "data_2/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -344,7 +344,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "data_1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -355,7 +355,7 @@ nodes {
   }
   input_tensors {
     name: "data_2/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -366,7 +366,7 @@ nodes {
   }
   output_tensors {
     name: "mm_u/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -387,7 +387,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step0:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -398,7 +398,7 @@ nodes {
   }
   input_tensors {
     name: "mm_u/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -409,7 +409,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step0:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -426,7 +426,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step0:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -437,7 +437,7 @@ nodes {
   }
   output_tensors {
     name: "split/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -448,7 +448,7 @@ nodes {
   }
   output_tensors {
     name: "split/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -459,7 +459,7 @@ nodes {
   }
   output_tensors {
     name: "split/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -470,7 +470,7 @@ nodes {
   }
   output_tensors {
     name: "split/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -492,7 +492,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "split/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -503,7 +503,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step0:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -520,7 +520,7 @@ nodes {
   src_tensors_indices: 1
   input_tensors {
     name: "split/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -531,7 +531,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step0:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -546,7 +546,7 @@ nodes {
   op: Data
   input_tensors {
     name: "lstm0:/c"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -557,7 +557,7 @@ nodes {
   }
   output_tensors {
     name: "data_3/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -576,7 +576,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step0:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -587,7 +587,7 @@ nodes {
   }
   input_tensors {
     name: "data_3/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -598,7 +598,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step0:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -615,7 +615,7 @@ nodes {
   src_tensors_indices: 2
   input_tensors {
     name: "split/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -626,7 +626,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step0:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -645,7 +645,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step0:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -656,7 +656,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step0:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -667,7 +667,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step0:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -686,7 +686,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step0:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -697,7 +697,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step0:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -708,7 +708,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step0:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -725,7 +725,7 @@ nodes {
   src_tensors_indices: 3
   input_tensors {
     name: "split/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -736,7 +736,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step0:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -753,7 +753,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step0:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -764,7 +764,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step0:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -783,7 +783,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step0:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -794,7 +794,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step0:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -805,7 +805,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step0:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -824,7 +824,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:unstack:squeeze_1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -835,7 +835,7 @@ nodes {
   }
   input_tensors {
     name: "data/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -846,7 +846,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step1:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -867,7 +867,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step0:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -878,7 +878,7 @@ nodes {
   }
   input_tensors {
     name: "data_2/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -889,7 +889,7 @@ nodes {
   }
   output_tensors {
     name: "mm_u_1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -910,7 +910,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step1:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -921,7 +921,7 @@ nodes {
   }
   input_tensors {
     name: "mm_u_1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -932,7 +932,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step1:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -949,7 +949,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step1:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -960,7 +960,7 @@ nodes {
   }
   output_tensors {
     name: "split_1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -971,7 +971,7 @@ nodes {
   }
   output_tensors {
     name: "split_1/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -982,7 +982,7 @@ nodes {
   }
   output_tensors {
     name: "split_1/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -993,7 +993,7 @@ nodes {
   }
   output_tensors {
     name: "split_1/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1015,7 +1015,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "split_1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1026,7 +1026,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step1:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1043,7 +1043,7 @@ nodes {
   src_tensors_indices: 1
   input_tensors {
     name: "split_1/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1054,7 +1054,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step1:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1073,7 +1073,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step1:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1084,7 +1084,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step0:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1095,7 +1095,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step1:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1112,7 +1112,7 @@ nodes {
   src_tensors_indices: 2
   input_tensors {
     name: "split_1/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1123,7 +1123,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step1:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1142,7 +1142,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step1:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1153,7 +1153,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step1:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1164,7 +1164,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step1:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1183,7 +1183,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step1:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1194,7 +1194,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step1:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1205,7 +1205,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step1:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1222,7 +1222,7 @@ nodes {
   src_tensors_indices: 3
   input_tensors {
     name: "split_1/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1233,7 +1233,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step1:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1250,7 +1250,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step1:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1261,7 +1261,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step1:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1280,7 +1280,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step1:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1291,7 +1291,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step1:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1302,7 +1302,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step1:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1321,7 +1321,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:unstack:squeeze_2/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1332,7 +1332,7 @@ nodes {
   }
   input_tensors {
     name: "data/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -1343,7 +1343,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step2:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -1364,7 +1364,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step1:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1375,7 +1375,7 @@ nodes {
   }
   input_tensors {
     name: "data_2/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -1386,7 +1386,7 @@ nodes {
   }
   output_tensors {
     name: "mm_u_2/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -1407,7 +1407,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step2:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -1418,7 +1418,7 @@ nodes {
   }
   input_tensors {
     name: "mm_u_2/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -1429,7 +1429,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step2:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -1446,7 +1446,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step2:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -1457,7 +1457,7 @@ nodes {
   }
   output_tensors {
     name: "split_2/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1468,7 +1468,7 @@ nodes {
   }
   output_tensors {
     name: "split_2/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1479,7 +1479,7 @@ nodes {
   }
   output_tensors {
     name: "split_2/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1490,7 +1490,7 @@ nodes {
   }
   output_tensors {
     name: "split_2/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1512,7 +1512,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "split_2/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1523,7 +1523,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step2:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1540,7 +1540,7 @@ nodes {
   src_tensors_indices: 1
   input_tensors {
     name: "split_2/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1551,7 +1551,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step2:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1570,7 +1570,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step2:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1581,7 +1581,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step1:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1592,7 +1592,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step2:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1609,7 +1609,7 @@ nodes {
   src_tensors_indices: 2
   input_tensors {
     name: "split_2/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1620,7 +1620,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step2:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1639,7 +1639,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step2:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1650,7 +1650,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step2:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1661,7 +1661,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step2:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1680,7 +1680,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step2:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1691,7 +1691,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step2:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1702,7 +1702,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step2:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1719,7 +1719,7 @@ nodes {
   src_tensors_indices: 3
   input_tensors {
     name: "split_2/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1730,7 +1730,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step2:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1747,7 +1747,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step2:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1758,7 +1758,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step2:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1777,7 +1777,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step2:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1788,7 +1788,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step2:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1799,7 +1799,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step2:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1818,7 +1818,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:unstack:squeeze_3/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1829,7 +1829,7 @@ nodes {
   }
   input_tensors {
     name: "data/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -1840,7 +1840,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step3:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -1861,7 +1861,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step2:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1872,7 +1872,7 @@ nodes {
   }
   input_tensors {
     name: "data_2/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -1883,7 +1883,7 @@ nodes {
   }
   output_tensors {
     name: "mm_u_3/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -1904,7 +1904,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step3:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -1915,7 +1915,7 @@ nodes {
   }
   input_tensors {
     name: "mm_u_3/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -1926,7 +1926,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step3:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -1943,7 +1943,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step3:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -1954,7 +1954,7 @@ nodes {
   }
   output_tensors {
     name: "split_3/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1965,7 +1965,7 @@ nodes {
   }
   output_tensors {
     name: "split_3/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1976,7 +1976,7 @@ nodes {
   }
   output_tensors {
     name: "split_3/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -1987,7 +1987,7 @@ nodes {
   }
   output_tensors {
     name: "split_3/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2009,7 +2009,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "split_3/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2020,7 +2020,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step3:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2037,7 +2037,7 @@ nodes {
   src_tensors_indices: 1
   input_tensors {
     name: "split_3/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2048,7 +2048,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step3:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2067,7 +2067,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step3:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2078,7 +2078,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step2:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2089,7 +2089,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step3:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2106,7 +2106,7 @@ nodes {
   src_tensors_indices: 2
   input_tensors {
     name: "split_3/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2117,7 +2117,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step3:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2136,7 +2136,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step3:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2147,7 +2147,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step3:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2158,7 +2158,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step3:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2177,7 +2177,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step3:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2188,7 +2188,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step3:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2199,7 +2199,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step3:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2216,7 +2216,7 @@ nodes {
   src_tensors_indices: 3
   input_tensors {
     name: "split_3/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2227,7 +2227,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step3:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2244,7 +2244,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step3:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2255,7 +2255,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step3:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2274,7 +2274,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step3:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2285,7 +2285,7 @@ nodes {
   }
   input_tensors {
     name: "lstm0:step3:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2296,7 +2296,7 @@ nodes {
   }
   output_tensors {
     name: "lstm0:step3:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2311,7 +2311,7 @@ nodes {
   op: Data
   input_tensors {
     name: "data_4/input0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -2322,7 +2322,7 @@ nodes {
   }
   output_tensors {
     name: "data_4/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -2341,7 +2341,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step0:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2352,7 +2352,7 @@ nodes {
   }
   input_tensors {
     name: "data_4/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -2363,7 +2363,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step0:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -2380,7 +2380,7 @@ nodes {
   op: Data
   input_tensors {
     name: "lstm1:/h"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2391,7 +2391,7 @@ nodes {
   }
   output_tensors {
     name: "data_5/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2406,7 +2406,7 @@ nodes {
   op: Data
   input_tensors {
     name: "data_6/input0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -2417,7 +2417,7 @@ nodes {
   }
   output_tensors {
     name: "data_6/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -2436,7 +2436,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "data_5/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2447,7 +2447,7 @@ nodes {
   }
   input_tensors {
     name: "data_6/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -2458,7 +2458,7 @@ nodes {
   }
   output_tensors {
     name: "mm_u_4/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -2479,7 +2479,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step0:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -2490,7 +2490,7 @@ nodes {
   }
   input_tensors {
     name: "mm_u_4/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -2501,7 +2501,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step0:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -2518,7 +2518,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step0:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -2529,7 +2529,7 @@ nodes {
   }
   output_tensors {
     name: "split_4/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2540,7 +2540,7 @@ nodes {
   }
   output_tensors {
     name: "split_4/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2551,7 +2551,7 @@ nodes {
   }
   output_tensors {
     name: "split_4/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2562,7 +2562,7 @@ nodes {
   }
   output_tensors {
     name: "split_4/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2584,7 +2584,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "split_4/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2595,7 +2595,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step0:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2612,7 +2612,7 @@ nodes {
   src_tensors_indices: 1
   input_tensors {
     name: "split_4/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2623,7 +2623,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step0:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2638,7 +2638,7 @@ nodes {
   op: Data
   input_tensors {
     name: "lstm1:/c"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2649,7 +2649,7 @@ nodes {
   }
   output_tensors {
     name: "data_7/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2668,7 +2668,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step0:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2679,7 +2679,7 @@ nodes {
   }
   input_tensors {
     name: "data_7/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2690,7 +2690,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step0:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2707,7 +2707,7 @@ nodes {
   src_tensors_indices: 2
   input_tensors {
     name: "split_4/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2718,7 +2718,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step0:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2737,7 +2737,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step0:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2748,7 +2748,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step0:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2759,7 +2759,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step0:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2778,7 +2778,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step0:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2789,7 +2789,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step0:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2800,7 +2800,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step0:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2817,7 +2817,7 @@ nodes {
   src_tensors_indices: 3
   input_tensors {
     name: "split_4/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2828,7 +2828,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step0:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2845,7 +2845,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step0:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2856,7 +2856,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step0:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2875,7 +2875,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step0:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2886,7 +2886,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step0:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2897,7 +2897,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step0:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2916,7 +2916,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step1:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2927,7 +2927,7 @@ nodes {
   }
   input_tensors {
     name: "data_4/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -2938,7 +2938,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step1:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -2959,7 +2959,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step0:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -2970,7 +2970,7 @@ nodes {
   }
   input_tensors {
     name: "data_6/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -2981,7 +2981,7 @@ nodes {
   }
   output_tensors {
     name: "mm_u_5/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -3002,7 +3002,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step1:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -3013,7 +3013,7 @@ nodes {
   }
   input_tensors {
     name: "mm_u_5/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -3024,7 +3024,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step1:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -3041,7 +3041,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step1:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -3052,7 +3052,7 @@ nodes {
   }
   output_tensors {
     name: "split_5/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3063,7 +3063,7 @@ nodes {
   }
   output_tensors {
     name: "split_5/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3074,7 +3074,7 @@ nodes {
   }
   output_tensors {
     name: "split_5/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3085,7 +3085,7 @@ nodes {
   }
   output_tensors {
     name: "split_5/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3107,7 +3107,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "split_5/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3118,7 +3118,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step1:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3135,7 +3135,7 @@ nodes {
   src_tensors_indices: 1
   input_tensors {
     name: "split_5/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3146,7 +3146,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step1:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3165,7 +3165,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step1:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3176,7 +3176,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step0:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3187,7 +3187,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step1:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3204,7 +3204,7 @@ nodes {
   src_tensors_indices: 2
   input_tensors {
     name: "split_5/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3215,7 +3215,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step1:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3234,7 +3234,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step1:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3245,7 +3245,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step1:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3256,7 +3256,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step1:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3275,7 +3275,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step1:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3286,7 +3286,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step1:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3297,7 +3297,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step1:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3314,7 +3314,7 @@ nodes {
   src_tensors_indices: 3
   input_tensors {
     name: "split_5/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3325,7 +3325,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step1:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3342,7 +3342,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step1:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3353,7 +3353,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step1:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3372,7 +3372,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step1:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3383,7 +3383,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step1:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3394,7 +3394,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step1:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3413,7 +3413,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step2:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3424,7 +3424,7 @@ nodes {
   }
   input_tensors {
     name: "data_4/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -3435,7 +3435,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step2:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -3456,7 +3456,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step1:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3467,7 +3467,7 @@ nodes {
   }
   input_tensors {
     name: "data_6/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -3478,7 +3478,7 @@ nodes {
   }
   output_tensors {
     name: "mm_u_6/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -3499,7 +3499,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step2:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -3510,7 +3510,7 @@ nodes {
   }
   input_tensors {
     name: "mm_u_6/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -3521,7 +3521,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step2:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -3538,7 +3538,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step2:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -3549,7 +3549,7 @@ nodes {
   }
   output_tensors {
     name: "split_6/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3560,7 +3560,7 @@ nodes {
   }
   output_tensors {
     name: "split_6/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3571,7 +3571,7 @@ nodes {
   }
   output_tensors {
     name: "split_6/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3582,7 +3582,7 @@ nodes {
   }
   output_tensors {
     name: "split_6/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3604,7 +3604,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "split_6/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3615,7 +3615,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step2:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3632,7 +3632,7 @@ nodes {
   src_tensors_indices: 1
   input_tensors {
     name: "split_6/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3643,7 +3643,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step2:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3662,7 +3662,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step2:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3673,7 +3673,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step1:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3684,7 +3684,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step2:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3701,7 +3701,7 @@ nodes {
   src_tensors_indices: 2
   input_tensors {
     name: "split_6/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3712,7 +3712,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step2:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3731,7 +3731,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step2:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3742,7 +3742,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step2:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3753,7 +3753,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step2:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3772,7 +3772,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step2:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3783,7 +3783,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step2:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3794,7 +3794,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step2:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3811,7 +3811,7 @@ nodes {
   src_tensors_indices: 3
   input_tensors {
     name: "split_6/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3822,7 +3822,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step2:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3839,7 +3839,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step2:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3850,7 +3850,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step2:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3869,7 +3869,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step2:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3880,7 +3880,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step2:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3891,7 +3891,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step2:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3910,7 +3910,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm0:step3:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3921,7 +3921,7 @@ nodes {
   }
   input_tensors {
     name: "data_4/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -3932,7 +3932,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step3:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -3953,7 +3953,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step2:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -3964,7 +3964,7 @@ nodes {
   }
   input_tensors {
     name: "data_6/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 128
       dims: 32
@@ -3975,7 +3975,7 @@ nodes {
   }
   output_tensors {
     name: "mm_u_7/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -3996,7 +3996,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step3:mm_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -4007,7 +4007,7 @@ nodes {
   }
   input_tensors {
     name: "mm_u_7/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -4018,7 +4018,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step3:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -4035,7 +4035,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step3:add_z/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 128
@@ -4046,7 +4046,7 @@ nodes {
   }
   output_tensors {
     name: "split_7/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4057,7 +4057,7 @@ nodes {
   }
   output_tensors {
     name: "split_7/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4068,7 +4068,7 @@ nodes {
   }
   output_tensors {
     name: "split_7/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4079,7 +4079,7 @@ nodes {
   }
   output_tensors {
     name: "split_7/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4101,7 +4101,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "split_7/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4112,7 +4112,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step3:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4129,7 +4129,7 @@ nodes {
   src_tensors_indices: 1
   input_tensors {
     name: "split_7/output1"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4140,7 +4140,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step3:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4159,7 +4159,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step3:sigmoid_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4170,7 +4170,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step2:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4181,7 +4181,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step3:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4198,7 +4198,7 @@ nodes {
   src_tensors_indices: 2
   input_tensors {
     name: "split_7/output2"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4209,7 +4209,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step3:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4228,7 +4228,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step3:sigmoid_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4239,7 +4239,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step3:act0/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4250,7 +4250,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step3:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4269,7 +4269,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step3:mul_f/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4280,7 +4280,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step3:mul_i/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4291,7 +4291,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step3:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4308,7 +4308,7 @@ nodes {
   src_tensors_indices: 3
   input_tensors {
     name: "split_7/output3"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4319,7 +4319,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step3:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4336,7 +4336,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step3:add_c/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4347,7 +4347,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step3:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4366,7 +4366,7 @@ nodes {
   src_tensors_indices: 0
   input_tensors {
     name: "lstm1:step3:sigmoid_o/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4377,7 +4377,7 @@ nodes {
   }
   input_tensors {
     name: "lstm1:step3:act1/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32
@@ -4388,7 +4388,7 @@ nodes {
   }
   output_tensors {
     name: "lstm1:step3:mul_h/output0"
-    data_type: Float16
+    data_type: Float32
     shape {
       dims: 1
       dims: 32

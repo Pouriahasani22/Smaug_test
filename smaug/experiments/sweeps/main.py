@@ -3,44 +3,42 @@
 import argparse
 import sys
 import os
-from sweeper import *
-from user_params import *
-
-param_name_to_type = {
-    "num_threads": NumThreadsParam,
-    "num_accels": NumAccelsParam,
-    "soc_interface": SoCInterfaceParam,
-    "l2_size": L2SizeParam,
-    "l2_assoc": L2AssocParam,
-    "acc_clock": AccClockParam
-}
-
-def check_sim_dir(sim_dir):
-  files = os.listdir(sim_dir)
-  for filename in ["env.txt", "gem5.cfg", "model_files", "run.sh",
-                   "smv-accel.cfg", "trace.sh"]:
-    if filename not in files:
-      print "Could not find %s in this simulation directory!" % filename
-      sys.exit(1)
+import json
+from sweeper import Sweeper
 
 def main():
   parser = argparse.ArgumentParser()
-  parser.add_argument("sim_dir")
+  parser.add_argument("--model", help="Model name.", required=True)
+  parser.add_argument(
+      "--params", help="Path to sweep parameter JSON.", required=True)
+  parser.add_argument(
+      "--output-dir", help="Output directory for generating the data points.",
+      required=True)
+  parser.add_argument(
+      "--gem5-binary", help="Path to the gem5 binary.")
+  parser.add_argument(
+      "--run-points", action="store_true", default=False,
+      help="Option to run the generated data points.")
+  parser.add_argument(
+      "--num-threads", type=int, default=8,
+      help="Number of threads used to run the data points.")
   args = parser.parse_args()
 
-  check_sim_dir(args.sim_dir)
+  with open(args.params) as params_file:
+    sweep_params = json.load(params_file)
 
-  params = []
-  for param, vals in sweep_params.items():
-    params.append(param_name_to_type[param](vals))
-  sweeper = Sweeper(args.sim_dir, params)
+  if not args.gem5_binary:
+    args.gem5_binary = os.path.join(
+        os.getenv("ALADDIN_HOME"), "../../build/X86/gem5.opt")
 
-  # Start enumerating all the configurations.
-  sweeper.enumerate()
+  sweeper = Sweeper(args.model, args.output_dir, sweep_params, args.gem5_binary)
 
-  # Start running simulations for all the generated configurations.
-  # Use 20 threads to run the simulations in parallel.
-  sweeper.runAll(16)
+  # Start enumerating all the data points.
+  sweeper.enumerate_all()
+
+  # Start running simulations for all the generated data points.
+  if args.run_points:
+    sweeper.run_all(threads=args.num_threads)
 
 if __name__ == "__main__":
   main()

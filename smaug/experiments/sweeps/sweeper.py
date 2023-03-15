@@ -1,220 +1,184 @@
 import os
 import sys
+import errno
+import six
 import shutil
-import fileinput
-import ConfigParser
 import subprocess
-from sets import Set
-from user_params import *
+import multiprocessing as mp
+from params import *
 
-class BaseParam:
-  def __init__(self, sweep_vals, changesTrace=False):
-    self.sweep_vals = sweep_vals
-    self.changesTrace = changesTrace
-    self.curr_sweep_idx = -1
-
-  def __str__(self):
-    return self.name + "_" + str(self.sweep_vals[self.curr_sweep_idx])
-
-  def apply(self, sweeper):
-    raise NotImplementedError
-
-  def next(self, sweeper):
-    self.curr_sweep_idx += 1
-    if self.curr_sweep_idx == len(self.sweep_vals):
-      self.curr_sweep_idx = -1
-      return False
-    return True
-
-  def change_config_file(self, config_file, origin, new, sweeper):
-    f = fileinput.input(
-        os.path.join(sweeper.curr_config_dir(), config_file), inplace=True)
-    for line in f:
-      print(line.replace(origin, new)),
-    f.close()
-
-class NumThreadsParam(BaseParam):
-  def __init__(self, sweep_vals):
-    BaseParam.__init__(self, sweep_vals, False)
-    self.name = "num_threads"
-
-  def apply(self, sweeper):
-    #print self
-    self.change_config_file(
-        "run.sh", "--num-threads=1",
-        "--num-threads=" + str(self.sweep_vals[self.curr_sweep_idx]), sweeper)
-    self.change_config_file(
-        "run.sh", "--num-cpus=1",
-        "--num-cpus=" + str(self.sweep_vals[self.curr_sweep_idx] + 1), sweeper)
-
-class NumAccelsParam(BaseParam):
-  def __init__(self, sweep_vals):
-    BaseParam.__init__(self, sweep_vals, True)
-    self.name = "num_accels"
-
-  def apply(self, sweeper):
-    #print self
-    # Change the run.sh, gem5.cfg and trace.sh.
-    self.change_config_file(
-        "run.sh", "--num-accels=1",
-        "--num-accels=" + str(self.sweep_vals[self.curr_sweep_idx]), sweeper)
-    if self.sweep_vals[self.curr_sweep_idx] > 1:
-      self.change_gem5_cfg(sweeper)
-    self.change_config_file(
-        "trace.sh", "--num-accels=1",
-        "--num-accels=" + str(self.sweep_vals[self.curr_sweep_idx]), sweeper)
-
-  def change_gem5_cfg(self, sweeper):
-    gem5cfg = ConfigParser.SafeConfigParser()
-    gem5cfg.read(os.path.join(sweeper.curr_config_dir(), "gem5.cfg"))
-    acc0 = gem5cfg.sections()[0]
-    acc0_id = int(gem5cfg.get(acc0, "accelerator_id"))
-    with open(os.path.join(sweeper.curr_config_dir(), "gem5.cfg"), "wb") as cfg:
-      for n in range(1, self.sweep_vals[self.curr_sweep_idx]):
-        new_acc = "acc" + str(n)
-        gem5cfg.add_section(new_acc)
-        for key, value in gem5cfg.items(acc0):
-          gem5cfg.set(new_acc, key, value)
-          gem5cfg.set(new_acc, "accelerator_id", str(acc0_id + n))
-          gem5cfg.set(
-              new_acc, "trace_file_name", "./dynamic_trace_acc%d.gz" % n)
-      gem5cfg.write(cfg)
-
-class SoCInterfaceParam(BaseParam):
-  def __init__(self, sweep_vals):
-    BaseParam.__init__(self, sweep_vals, False)
-    self.name = "soc_interface"
-
-  def apply(self, sweeper):
-    #print self
-    self.change_config_file(
-        "model_files", "smv_dma_topo.pbtxt",
-        "smv_%s_topo.pbtxt" % self.sweep_vals[self.curr_sweep_idx], sweeper)
-
-class L2SizeParam(BaseParam):
-  def __init__(self, sweep_vals):
-    BaseParam.__init__(self, sweep_vals, False)
-    self.name = "l2_size"
-
-  def apply(self, sweeper):
-    #print self
-    self.change_config_file(
-        "run.sh", "--l2_size=2097152",
-        "--l2_size=" + str(self.sweep_vals[self.curr_sweep_idx]), sweeper)
-
-class L2AssocParam(BaseParam):
-  def __init__(self, sweep_vals):
-    BaseParam.__init__(self, sweep_vals, False)
-    self.name = "l2_assoc"
-
-  def apply(self, sweeper):
-    #print self
-    self.change_config_file(
-        "run.sh", "--l2_assoc=16",
-        "--l2_assoc=" + str(self.sweep_vals[self.curr_sweep_idx]), sweeper)
-
-class AccClockParam(BaseParam):
-  def __init__(self, sweep_vals):
-    BaseParam.__init__(self, sweep_vals, False)
-    self.name = "accel_clock_time"
-
-  def apply(self, sweeper):
-    #print self
-    self.change_config_file(
-        "run.sh", "--sys-clock=1GHz",
-        "--sys-clock=%.3fGHz" % (1.0 / self.sweep_vals[self.curr_sweep_idx]),
-        sweeper)
-    self.change_config_file(
-        "smv-accel.cfg", "cycle_time,1",
-        "cycle_time,%d" % self.sweep_vals[self.curr_sweep_idx], sweeper)
-    self.change_config_file(
-        "gem5.cfg", "cycle_time = 1",
-        "cycle_time = %d" % self.sweep_vals[self.curr_sweep_idx], sweeper)
+param_types = {
+    "num_threads": NumThreadsParam,
+    "num_accels": NumAccelsParam,
+    "soc_interface": SoCInterfaceParam,
+    "l1d_size": L1DSizeParam,
+    "l2_size": L2SizeParam,
+    "l1d_assoc": L1DAssocParam,
+    "l2_assoc": L2AssocParam,
+    "l1d_hit_latency": L1DHitLatencyParam,
+    "l2_hit_latency": L2HitLatencyParam,
+    "acc_clock": AccClockParam,
+    "mem_type": MemTypeParam,
+    "cpu_clock": CpuClockParam,
+    "pipelined_dma": PipelinedDmaParam,
+    "ignore_cache_flush": IgnoreCacheFlushParam,
+    "invalidate_on_dma_store": InvalidateOnDmaStoreParam,
+    "max_dma_requests": MaxDmaRequestsParam,
+    "num_dma_channels": NumDmaChannelsParam,
+    "dma_chunk_size": DmaChunkSizeParam,
+}
 
 class Sweeper:
-  def __init__(self, sim_dir, params):
-    self.sim_dir = os.path.abspath(sim_dir)
-    self.params = params
-    self.num_data_points = 0
-    self.traces = Set()
+  def __init__(self, model_name, output_dir, params, gem5_binary):
+    self._model_name = model_name
+    self._output_dir = os.path.abspath(output_dir)
+    if not os.path.isdir(self._output_dir):
+      os.mkdir(self._output_dir)
+    self._configs_dir = os.path.join(
+        os.getenv("SMAUG_HOME"), "experiments/sweeps/configs")
+    self._init_params(params)
+    self._gem5_binary = gem5_binary
+    self._num_data_points = 0
+    self._traces = set()
     # Create a folder for storing all the traces.
-    self.trace_dir = os.path.join(self.sim_dir, "traces")
-    if not os.path.isdir(self.trace_dir):
-      os.mkdir(self.trace_dir)
+    self._trace_dir = os.path.join(self._output_dir, "traces")
+    if not os.path.isdir(self._trace_dir):
+      os.mkdir(self._trace_dir)
 
-  def curr_config_dir(self):
-    return os.path.join(self.sim_dir, str(self.num_data_points))
+  def _init_params(self, params):
+    self._params = []
+    for param_name,param_type in param_types.items():
+      if param_name in params:
+        self._params.append(param_type(param_name, params[param_name]))
+      else:
+        self._params.append(param_type(param_name, param_type.default_value()))
 
-  def create_point(self):
-    print "---Create data point: %d.---" % self.num_data_points
-    if not os.path.isdir(self.curr_config_dir()):
-      os.mkdir(self.curr_config_dir())
-    src_dir = self.sim_dir
-    dst_dir = self.curr_config_dir()
-    for f in ["gem5.cfg", "run.sh", "model_files", "trace.sh", "smv-accel.cfg"]:
+  def curr_point_dir(self):
+    return os.path.join(self._output_dir, str(self._num_data_points))
+
+  def _create_point(self):
+    point_dir = os.path.join(self._output_dir, str(self._num_data_points))
+
+    # Copy configuration files to the simulation directory of this data point.
+    if not os.path.isdir(point_dir):
+      os.mkdir(point_dir)
+    for f in ["gem5.cfg", "run.sh", "model_files", "smv-accel.cfg", "trace.sh"]:
       shutil.copyfile(
-          os.path.join(self.sim_dir, f), os.path.join(
-              self.curr_config_dir(), f))
-    if not os.path.exists(os.path.join(self.curr_config_dir(), "env.txt")):
-      os.symlink(
-          os.path.join(self.sim_dir, "env.txt"),
-          os.path.join(self.curr_config_dir(), "env.txt"))
-    for param in self.params:
-      param.apply(self)
+          os.path.join(self._configs_dir, f),
+          os.path.join(point_dir, f))
+    for f in ["env.txt"]:
+      link = os.path.join(point_dir, f)
+      target = os.path.join(self._configs_dir, f)
+      try:
+        os.symlink(target, link)
+      except OSError as e:
+        if e.errno == errno.EEXIST:
+          os.remove(link)
+          os.symlink(target, link)
+        else:
+          raise e
+    soc_interface = "dma"
+    for p in self._params:
+      if isinstance(p, SoCInterfaceParam):
+        soc_interface = p.curr_sweep_value()
+    change_config_file(
+        point_dir, "model_files", {
+            "model_name": self._model_name,
+            "soc_interface": soc_interface
+        })
+    # gem5 binary in run.sh.
+    change_config_file(point_dir, "run.sh", {"gem5-binary": self._gem5_binary})
+
+    # Apply every sweep parameter for this data point.
+    for p in self._params:
+      p.apply(self.curr_point_dir())
 
     # Now all the configuration files have been updated, Check if we need to
     # generate new trace for this data point.
-    trace_id = ""
+    trace_id = None
     num_accels = 0
-    for param in self.params:
-      if param.changesTrace == True:
-        if trace_id == "":
-          trace_id = str(param)
-        else:
-          trace_id += "_" + str(param)
-      if param.name == "num_accels":
-        num_accels = param.sweep_vals[param.curr_sweep_idx]
+    for p in self._params:
+      if p.changes_trace == True:
+        trace_id = "%s_%s" % (trace_id, param) if trace_id else str(p)
+      if isinstance(p, NumAccelsParam):
+        num_accels = p.curr_sweep_value()
     # Before we generate any traces, create links to the traces.
     for i in range(num_accels):
-      if not os.path.exists(os.path.join(self.curr_config_dir(),
-                                         "dynamic_trace_acc%d.gz" % i)):
-        os.symlink(
-            os.path.join(
-                self.trace_dir, trace_id, "dynamic_trace_acc%d.gz" % i),
-            os.path.join(self.curr_config_dir(), "dynamic_trace_acc%d.gz" % i))
+      link = os.path.join(point_dir, "dynamic_trace_acc%d.gz" % i)
+      target = os.path.join(
+          self._trace_dir, trace_id, "dynamic_trace_acc%d.gz" % i)
+      try:
+        os.symlink(target, link)
+      except OSError as e:
+        if e.errno == errno.EEXIST:
+          os.remove(link)
+          os.symlink(target, link)
+        else:
+          raise e
     # If this is a new trace id, generate new traces.
-    if trace_id not in self.traces:
-      self.traces.add(trace_id)
-      trace_dir = os.path.join(self.trace_dir, trace_id)
+    if trace_id not in self._traces:
+      self._traces.add(trace_id)
+      trace_dir = os.path.join(self._trace_dir, trace_id)
       if not os.path.isdir(trace_dir):
         os.mkdir(trace_dir)
       # Run trace.sh to generate the traces.
-      subprocess.Popen("sh trace.sh", cwd=self.curr_config_dir(),
-                       shell=True).wait()
+      process = subprocess.Popen(["bash", "trace.sh"], cwd=point_dir,
+                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+      stdout, stderr = process.communicate()
+      assert process.returncode == 0, (
+          "Generating trace returned nonzero exit code! Contents of output:\n "
+          "%s\n%s" % (six.ensure_text(stdout), six.ensure_text(stderr)))
+    print("---Created data point: %d.---" % self._num_data_points)
 
-  # Create configurations for all data points.
-  def enumerate(self, param_idx=0):
-    if param_idx < len(sweep_params) - 1:
-      while self.params[param_idx].next(self) == True:
+  def enumerate(self, param_idx):
+    if param_idx < len(self._params) - 1:
+      while self._params[param_idx].next() == True:
         self.enumerate(param_idx + 1)
       return
     else:
-      while self.params[param_idx].next(self) == True:
-        self.create_point()
-        self.num_data_points += 1
-        pass
+      while self._params[param_idx].next() == True:
+        self._create_point()
+        self._num_data_points += 1
       return
 
-  # Run simulations for all data points.
-  def runAll(self, threads):
-    print "Running all data points."
-    processes = []
-    for p in range(self.num_data_points):
-      if len(processes) == threads:
-        processes[0].wait()
-        processes = processes[1:]
-      processes.append(
-          subprocess.Popen(
-              "sh run.sh", cwd=os.path.join(self.sim_dir, str(p)), shell=True))
-    for p in processes:
-      p.wait()
+  def enumerate_all(self):
+    """Create configurations for all data points.  """
+    print("Creating all data points...")
+    self.enumerate(0)
+
+  def run_all(self, threads):
+    """Run simulations for all data points.
+
+    Args:
+      Number of threads used to run the simulations.
+    """
+    print("Running all data points...")
+    counter = mp.Value('i', 0)
+    sims = []
+    pool = mp.Pool(
+        initializer=_init_counter, initargs=(counter, ), processes=threads)
+    for p in range(self._num_data_points):
+      cmd = os.path.join(self._output_dir, str(p), "run.sh")
+      sims.append(pool.apply_async(_run_simulation, args=(cmd, )))
+    for sim in sims:
+      sim.get()
+    pool.close()
+    pool.join()
+
+counter = 0
+
+def _init_counter(args):
+  global counter
+  counter = args
+
+def _run_simulation(cmd):
+  global counter
+  process = subprocess.Popen(["bash", cmd], cwd=os.path.dirname(cmd),
+                             stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+  stdout, stderr = process.communicate()
+  assert process.returncode == 0, (
+      "Running simulation returned nonzero exit code! Contents of output:\n "
+      "%s\n%s" % (six.ensure_text(stdout), six.ensure_text(stderr)))
+  with counter.get_lock():
+    counter.value += 1
+  print("---Finished running points: %d.---" % counter.value)

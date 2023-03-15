@@ -1,0 +1,1092 @@
+ 0# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+ 9# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+10# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+11# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+24# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+25# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+26# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+kir
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+ 9# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+10# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+11# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+24# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+25# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+26# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+kir
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+ 9# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+10# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+11# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+24# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+25# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+26# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+kir
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+ 9# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+10# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+11# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+24# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+25# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+26# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+kir
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+ 9# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+10# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+11# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+24# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+25# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+26# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+kir
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+ 9# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+10# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+11# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+24# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+25# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+26# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+kir
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+ 9# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+10# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+11# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+24# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+25# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+26# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+kir
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+ 9# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+10# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+11# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+24# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+25# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+26# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+kir
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+ 9# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+10# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+11# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+24# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+25# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+26# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+kir
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+ 9# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+10# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+11# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+24# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+25# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+26# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+kir
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+ 9# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+10# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+11# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+24# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+25# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+26# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+kir
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+ 9# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+10# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+11# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+24# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+25# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+26# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+kir
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+

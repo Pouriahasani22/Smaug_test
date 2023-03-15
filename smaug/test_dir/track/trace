@@ -1,0 +1,64 @@
+data
+data_1
+data_2
+conv
+Current Accels Id: 0
+Next Accels Id: 1
+====================
+max_pool
+reorder
+mat_mul
+Current Accels Id: 0
+Next Accels Id: 1
+====================
+Current Accels Id: 1
+Next Accels Id: 0
+====================
+data
+data_1
+data_2
+conv
+Current Accels Id: 0
+Next Accels Id: 1
+====================
+max_pool
+reorder
+mat_mul
+Current Accels Id: 0
+Next Accels Id: 1
+====================
+Current Accels Id: 1
+Next Accels Id: 0
+====================
+data
+data_1
+data_2
+conv
+Current Accels Id: 0
+Next Accels Id: 1
+====================
+max_pool
+reorder
+mat_mul
+Current Accels Id: 0
+Next Accels Id: 1
+====================
+Current Accels Id: 1
+Next Accels Id: 0
+====================
+data
+data_1
+data_2
+conv
+Current Accels Id: 0
+Next Accels Id: 1
+====================
+max_pool
+reorder
+mat_mul
+Current Accels Id: 0
+Next Accels Id: 1
+====================
+Current Accels Id: 1
+Next Accels Id: 0
+====================

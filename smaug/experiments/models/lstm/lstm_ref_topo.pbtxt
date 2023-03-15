@@ -10,6 +10,7 @@ nodes {
       dims: 4
       dims: 32
       layout: NTC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -21,6 +22,7 @@ nodes {
       dims: 4
       dims: 32
       layout: NTC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -38,6 +40,7 @@ nodes {
       dims: 4
       dims: 32
       layout: NTC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -49,6 +52,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NTC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -60,6 +64,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NTC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -71,6 +76,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NTC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -82,6 +88,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NTC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -104,6 +111,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NTC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -114,6 +122,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -131,6 +140,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NTC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -141,6 +151,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -158,6 +169,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NTC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -168,6 +180,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -185,6 +198,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NTC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -195,6 +209,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -209,6 +224,7 @@ nodes {
       dims: 128
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -219,32 +235,7 @@ nodes {
       dims: 128
       dims: 32
       layout: NC
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
-  name: "reorder"
-  op: Reorder
-  parents: "data"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -253,7 +244,7 @@ nodes {
   name: "lstm0:step0:mm_f"
   op: InnerProduct
   parents: "lstm0:unstack:squeeze"
-  parents: "reorder"
+  parents: "data"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -263,16 +254,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder/output0"
+    name: "data/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -283,6 +276,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -293,12 +287,13 @@ nodes {
   name: "data_1"
   op: Data
   input_tensors {
-    name: "data_1/input0"
+    name: "lstm0:/h"
     data_type: Float32
     shape {
-      dims: 128
+      dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -306,35 +301,10 @@ nodes {
     name: "data_1/output0"
     data_type: Float32
     shape {
-      dims: 128
+      dims: 1
       dims: 32
       layout: NC
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
-  name: "reorder_1"
-  op: Reorder
-  parents: "data_1"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data_1/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_1/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -343,12 +313,13 @@ nodes {
   name: "data_2"
   op: Data
   input_tensors {
-    name: "lstm0:/h"
+    name: "data_2/input0"
     data_type: Float32
     shape {
-      dims: 1
+      dims: 128
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -356,9 +327,10 @@ nodes {
     name: "data_2/output0"
     data_type: Float32
     shape {
-      dims: 1
+      dims: 128
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -366,27 +338,29 @@ nodes {
 nodes {
   name: "mm_u"
   op: InnerProduct
+  parents: "data_1"
   parents: "data_2"
-  parents: "reorder_1"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
-    name: "data_2/output0"
+    name: "data_1/output0"
     data_type: Float32
     shape {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_1/output0"
+    name: "data_2/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -397,6 +371,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -417,6 +392,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -427,6 +403,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -437,6 +414,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -453,6 +431,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -463,6 +442,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -473,6 +453,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -483,6 +464,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -493,6 +475,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -514,6 +497,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -524,6 +508,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -540,6 +525,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -550,6 +536,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -564,6 +551,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -574,6 +562,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -592,6 +581,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -602,6 +592,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -612,6 +603,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -628,6 +620,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -638,6 +631,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -656,6 +650,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -666,6 +661,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -676,6 +672,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -694,6 +691,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -704,6 +702,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -714,6 +713,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -730,6 +730,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -740,6 +741,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -756,6 +758,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -766,6 +769,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -784,6 +788,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -794,6 +799,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -804,32 +810,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
-  name: "reorder_2"
-  op: Reorder
-  parents: "data"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_2/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -838,7 +819,7 @@ nodes {
   name: "lstm0:step1:mm_f"
   op: InnerProduct
   parents: "lstm0:unstack:squeeze_1"
-  parents: "reorder_2"
+  parents: "data"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -848,16 +829,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_2/output0"
+    name: "data/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -868,6 +851,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -875,36 +859,10 @@ nodes {
   }
 }
 nodes {
-  name: "reorder_3"
-  op: Reorder
-  parents: "data_1"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data_1/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_3/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
   name: "mm_u_1"
   op: InnerProduct
   parents: "lstm0:step0:mul_h"
-  parents: "reorder_3"
+  parents: "data_2"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -914,16 +872,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_3/output0"
+    name: "data_2/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -934,6 +894,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -954,6 +915,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -964,6 +926,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -974,6 +937,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -990,6 +954,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1000,6 +965,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1010,6 +976,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1020,6 +987,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1030,6 +998,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1051,6 +1020,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1061,6 +1031,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1077,6 +1048,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1087,6 +1059,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1105,6 +1078,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1115,6 +1089,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1125,6 +1100,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1141,6 +1117,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1151,6 +1128,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1169,6 +1147,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1179,6 +1158,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1189,6 +1169,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1207,6 +1188,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1217,6 +1199,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1227,6 +1210,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1243,6 +1227,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1253,6 +1238,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1269,6 +1255,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1279,6 +1266,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1297,6 +1285,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1307,6 +1296,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1317,32 +1307,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
-  name: "reorder_4"
-  op: Reorder
-  parents: "data"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_4/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1351,7 +1316,7 @@ nodes {
   name: "lstm0:step2:mm_f"
   op: InnerProduct
   parents: "lstm0:unstack:squeeze_2"
-  parents: "reorder_4"
+  parents: "data"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -1361,16 +1326,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_4/output0"
+    name: "data/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1381,6 +1348,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1388,36 +1356,10 @@ nodes {
   }
 }
 nodes {
-  name: "reorder_5"
-  op: Reorder
-  parents: "data_1"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data_1/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_5/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
   name: "mm_u_2"
   op: InnerProduct
   parents: "lstm0:step1:mul_h"
-  parents: "reorder_5"
+  parents: "data_2"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -1427,16 +1369,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_5/output0"
+    name: "data_2/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1447,6 +1391,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1467,6 +1412,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1477,6 +1423,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1487,6 +1434,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1503,6 +1451,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1513,6 +1462,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1523,6 +1473,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1533,6 +1484,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1543,6 +1495,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1564,6 +1517,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1574,6 +1528,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1590,6 +1545,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1600,6 +1556,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1618,6 +1575,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1628,6 +1586,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1638,6 +1597,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1654,6 +1614,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1664,6 +1625,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1682,6 +1644,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1692,6 +1655,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1702,6 +1666,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1720,6 +1685,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1730,6 +1696,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1740,6 +1707,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1756,6 +1724,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1766,6 +1735,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1782,6 +1752,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1792,6 +1763,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1810,6 +1782,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1820,6 +1793,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1830,32 +1804,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
-  name: "reorder_6"
-  op: Reorder
-  parents: "data"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_6/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1864,7 +1813,7 @@ nodes {
   name: "lstm0:step3:mm_f"
   op: InnerProduct
   parents: "lstm0:unstack:squeeze_3"
-  parents: "reorder_6"
+  parents: "data"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -1874,16 +1823,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_6/output0"
+    name: "data/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1894,6 +1845,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1901,36 +1853,10 @@ nodes {
   }
 }
 nodes {
-  name: "reorder_7"
-  op: Reorder
-  parents: "data_1"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data_1/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_7/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
   name: "mm_u_3"
   op: InnerProduct
   parents: "lstm0:step2:mul_h"
-  parents: "reorder_7"
+  parents: "data_2"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -1940,16 +1866,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_7/output0"
+    name: "data_2/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1960,6 +1888,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1980,6 +1909,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -1990,6 +1920,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2000,6 +1931,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2016,6 +1948,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2026,6 +1959,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2036,6 +1970,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2046,6 +1981,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2056,6 +1992,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2077,6 +2014,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2087,6 +2025,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2103,6 +2042,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2113,6 +2053,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2131,6 +2072,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2141,6 +2083,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2151,6 +2094,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2167,6 +2111,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2177,6 +2122,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2195,6 +2141,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2205,6 +2152,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2215,6 +2163,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2233,6 +2182,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2243,6 +2193,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2253,6 +2204,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2269,6 +2221,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2279,6 +2232,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2295,6 +2249,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2305,6 +2260,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2323,6 +2279,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2333,6 +2290,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2343,6 +2301,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2357,6 +2316,7 @@ nodes {
       dims: 128
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2367,32 +2327,7 @@ nodes {
       dims: 128
       dims: 32
       layout: NC
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
-  name: "reorder_8"
-  op: Reorder
-  parents: "data_4"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data_4/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_8/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2401,7 +2336,7 @@ nodes {
   name: "lstm1:step0:mm_f"
   op: InnerProduct
   parents: "lstm0:step0:mul_h"
-  parents: "reorder_8"
+  parents: "data_4"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -2411,16 +2346,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_8/output0"
+    name: "data_4/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2431,6 +2368,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2441,12 +2379,13 @@ nodes {
   name: "data_5"
   op: Data
   input_tensors {
-    name: "data_5/input0"
+    name: "lstm1:/h"
     data_type: Float32
     shape {
-      dims: 128
+      dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2454,35 +2393,10 @@ nodes {
     name: "data_5/output0"
     data_type: Float32
     shape {
-      dims: 128
+      dims: 1
       dims: 32
       layout: NC
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
-  name: "reorder_9"
-  op: Reorder
-  parents: "data_5"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data_5/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_9/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2491,12 +2405,13 @@ nodes {
   name: "data_6"
   op: Data
   input_tensors {
-    name: "lstm1:/h"
+    name: "data_6/input0"
     data_type: Float32
     shape {
-      dims: 1
+      dims: 128
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2504,9 +2419,10 @@ nodes {
     name: "data_6/output0"
     data_type: Float32
     shape {
-      dims: 1
+      dims: 128
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2514,27 +2430,29 @@ nodes {
 nodes {
   name: "mm_u_4"
   op: InnerProduct
+  parents: "data_5"
   parents: "data_6"
-  parents: "reorder_9"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
-    name: "data_6/output0"
+    name: "data_5/output0"
     data_type: Float32
     shape {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_9/output0"
+    name: "data_6/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2545,6 +2463,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2565,6 +2484,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2575,6 +2495,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2585,6 +2506,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2601,6 +2523,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2611,6 +2534,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2621,6 +2545,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2631,6 +2556,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2641,6 +2567,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2662,6 +2589,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2672,6 +2600,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2688,6 +2617,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2698,6 +2628,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2712,6 +2643,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2722,6 +2654,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2740,6 +2673,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2750,6 +2684,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2760,6 +2695,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2776,6 +2712,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2786,6 +2723,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2804,6 +2742,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2814,6 +2753,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2824,6 +2764,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2842,6 +2783,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2852,6 +2794,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2862,6 +2805,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2878,6 +2822,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2888,6 +2833,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2904,6 +2850,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2914,6 +2861,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2932,6 +2880,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2942,6 +2891,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2952,32 +2902,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
-  name: "reorder_10"
-  op: Reorder
-  parents: "data_4"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data_4/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_10/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -2986,7 +2911,7 @@ nodes {
   name: "lstm1:step1:mm_f"
   op: InnerProduct
   parents: "lstm0:step1:mul_h"
-  parents: "reorder_10"
+  parents: "data_4"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -2996,16 +2921,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_10/output0"
+    name: "data_4/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3016,6 +2943,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3023,36 +2951,10 @@ nodes {
   }
 }
 nodes {
-  name: "reorder_11"
-  op: Reorder
-  parents: "data_5"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data_5/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_11/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
   name: "mm_u_5"
   op: InnerProduct
   parents: "lstm1:step0:mul_h"
-  parents: "reorder_11"
+  parents: "data_6"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -3062,16 +2964,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_11/output0"
+    name: "data_6/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3082,6 +2986,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3102,6 +3007,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3112,6 +3018,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3122,6 +3029,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3138,6 +3046,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3148,6 +3057,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3158,6 +3068,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3168,6 +3079,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3178,6 +3090,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3199,6 +3112,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3209,6 +3123,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3225,6 +3140,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3235,6 +3151,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3253,6 +3170,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3263,6 +3181,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3273,6 +3192,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3289,6 +3209,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3299,6 +3220,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3317,6 +3239,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3327,6 +3250,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3337,6 +3261,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3355,6 +3280,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3365,6 +3291,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3375,6 +3302,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3391,6 +3319,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3401,6 +3330,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3417,6 +3347,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3427,6 +3358,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3445,6 +3377,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3455,6 +3388,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3465,32 +3399,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
-  name: "reorder_12"
-  op: Reorder
-  parents: "data_4"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data_4/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_12/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3499,7 +3408,7 @@ nodes {
   name: "lstm1:step2:mm_f"
   op: InnerProduct
   parents: "lstm0:step2:mul_h"
-  parents: "reorder_12"
+  parents: "data_4"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -3509,16 +3418,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_12/output0"
+    name: "data_4/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3529,6 +3440,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3536,36 +3448,10 @@ nodes {
   }
 }
 nodes {
-  name: "reorder_13"
-  op: Reorder
-  parents: "data_5"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data_5/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_13/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
   name: "mm_u_6"
   op: InnerProduct
   parents: "lstm1:step1:mul_h"
-  parents: "reorder_13"
+  parents: "data_6"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -3575,16 +3461,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_13/output0"
+    name: "data_6/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3595,6 +3483,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3615,6 +3504,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3625,6 +3515,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3635,6 +3526,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3651,6 +3543,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3661,6 +3554,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3671,6 +3565,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3681,6 +3576,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3691,6 +3587,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3712,6 +3609,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3722,6 +3620,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3738,6 +3637,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3748,6 +3648,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3766,6 +3667,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3776,6 +3678,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3786,6 +3689,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3802,6 +3706,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3812,6 +3717,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3830,6 +3736,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3840,6 +3747,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3850,6 +3758,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3868,6 +3777,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3878,6 +3788,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3888,6 +3799,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3904,6 +3816,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3914,6 +3827,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3930,6 +3844,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3940,6 +3855,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3958,6 +3874,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3968,6 +3885,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -3978,32 +3896,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
-  name: "reorder_14"
-  op: Reorder
-  parents: "data_4"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data_4/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_14/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4012,7 +3905,7 @@ nodes {
   name: "lstm1:step3:mm_f"
   op: InnerProduct
   parents: "lstm0:step3:mul_h"
-  parents: "reorder_14"
+  parents: "data_4"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -4022,16 +3915,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_14/output0"
+    name: "data_4/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4042,6 +3937,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4049,36 +3945,10 @@ nodes {
   }
 }
 nodes {
-  name: "reorder_15"
-  op: Reorder
-  parents: "data_5"
-  src_tensors_indices: 0
-  input_tensors {
-    name: "data_5/output0"
-    data_type: Float32
-    shape {
-      dims: 128
-      dims: 32
-      layout: NC
-    }
-    data_format: Uncompressed
-  }
-  output_tensors {
-    name: "reorder_15/output0"
-    data_type: Float32
-    shape {
-      dims: 32
-      dims: 128
-      layout: CN
-    }
-    data_format: Uncompressed
-  }
-}
-nodes {
   name: "mm_u_7"
   op: InnerProduct
   parents: "lstm1:step2:mul_h"
-  parents: "reorder_15"
+  parents: "data_6"
   src_tensors_indices: 0
   src_tensors_indices: 0
   input_tensors {
@@ -4088,16 +3958,18 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
   input_tensors {
-    name: "reorder_15/output0"
+    name: "data_6/output0"
     data_type: Float32
     shape {
-      dims: 32
       dims: 128
-      layout: CN
+      dims: 32
+      layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4108,6 +3980,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4128,6 +4001,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4138,6 +4012,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4148,6 +4023,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4164,6 +4040,7 @@ nodes {
       dims: 1
       dims: 128
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4174,6 +4051,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4184,6 +4062,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4194,6 +4073,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4204,6 +4084,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4225,6 +4106,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4235,6 +4117,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4251,6 +4134,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4261,6 +4145,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4279,6 +4164,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4289,6 +4175,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4299,6 +4186,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4315,6 +4203,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4325,6 +4214,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4343,6 +4233,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4353,6 +4244,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4363,6 +4255,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4381,6 +4274,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4391,6 +4285,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4401,6 +4296,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4417,6 +4313,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4427,6 +4324,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4443,6 +4341,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4453,6 +4352,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4471,6 +4371,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4481,6 +4382,7 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
@@ -4491,9 +4393,10 @@ nodes {
       dims: 1
       dims: 32
       layout: NC
+      alignment: 8
     }
     data_format: Uncompressed
   }
 }
-backend: "Reference"
+backend: "SMV"
 mem_policy: AllDma

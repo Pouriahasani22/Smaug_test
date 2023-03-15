@@ -4,7 +4,7 @@
 #include "smaug/operators/smv/smv_pooling_tiling.h"
 #include "smaug/operators/smv/smv_kernels.h"
 #include "smaug/utility/debug_stream.h"
-
+#include <fstream>
 namespace smaug {
 namespace smv {
 namespace pool {
@@ -39,6 +39,7 @@ void SmvPoolingOp::runNHWC(TiledTensor& inputs, TiledTensor& outputs) {
                 int iC = 0, oC = 0;
                 // This keeps track of the channel offset of the outputs.
                 int ofmapOffset = 0;
+
                 while (iC < inputChanTiles && oC < outputChanTiles) {
                     int inputTileIdx = inputIdx(N, H, W, iC);
                     int outputTileIdx = outputIdx(N, H, W, oC);
@@ -48,6 +49,9 @@ void SmvPoolingOp::runNHWC(TiledTensor& inputs, TiledTensor& outputs) {
                     // tile.
                     dout(1) << "Input: " << inputTileIdx
                             << ", output: " << outputTileIdx << "\n";
+
+
+
                     Tensor* inputTile = inputs.getTileWithData(inputTileIdx);
                     Tensor* outputTile = outputs[outputTileIdx];
                     const TensorShape& inputShape = inputTile->getShape();
@@ -63,6 +67,26 @@ void SmvPoolingOp::runNHWC(TiledTensor& inputs, TiledTensor& outputs) {
                                          inputShape[2], inputShape[3] };
                     int outputDims[4] = { outputShape[0], outputShape[1],
                                           outputShape[2], outputShape[3] };
+                    std::cout <<"\n*Pooling"<<std::endl;
+//                    std::ofstream summary_file;
+//                    summary_file.open("./outputs/nnet_fwd_summary_5",std::ios::app);
+//                    if(!summary_file.fail()) {
+////                    summary_file << "\n******Accelerator Id: " <<smv::kPoolingHw<<"*****"<<std::endl;
+//                    summary_file << "inputTileIdx: " <<inputTileIdx<<",\t";
+//                    summary_file << "outputTileIdx: " <<outputTileIdx<<std::endl;
+//                    #if 1
+//                        summary_file<<"input Tile dimension: ";
+//                        for(int j{0};j<4;j++)
+//                            summary_file << "[" << j << "]: " << inputDims[j]<<"\t";
+//                        summary_file <<"\noutput tile dimension: ";
+//                        for(int j{0};j<4;j++)
+//                            summary_file << "[" << j << "]: " << outputDims[j]<<"\t";
+//                        summary_file << std::endl;
+//                    #endif
+//                    }
+//                    else
+//                        std::cout << "failed to write to summary file"<<std::endl;
+//                    summary_file.close();
                     // If the input and output tiles belong to the same channel
                     // group, then their data will be loaded at the same time
                     // into the spads, so we start from the beginning of the

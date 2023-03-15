@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./model_files
+. ./model_files
 
 cfg_home=`pwd`
 gem5_dir=${ALADDIN_HOME}/../..
@@ -11,7 +11,6 @@ ${gem5_dir}/build/X86/gem5.opt \
   --outdir=${cfg_home}/outputs \
   --stats-db-file=stats.db \
   ${gem5_dir}/configs/aladdin/aladdin_se.py \
-  --env=env.txt \
   --num-cpus=1 \
   --mem-size=4GB \
   --mem-type=LPDDR4_3200_2x16  \

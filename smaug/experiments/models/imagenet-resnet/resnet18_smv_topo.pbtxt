@@ -1,0 +1,6609 @@
+name: "resnet18_smv"
+nodes {
+  name: "input"
+  op: Data
+  input_tensors {
+    name: "input/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 225
+      dims: 225
+      dims: 3
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "input/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 225
+      dims: 225
+      dims: 3
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data"
+  op: Data
+  input_tensors {
+    name: "data/input0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 7
+      dims: 7
+      dims: 3
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data/output0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 7
+      dims: 7
+      dims: 3
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "conv0"
+  op: Convolution3d
+  parents: "input"
+  parents: "data"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "input/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 225
+      dims: 225
+      dims: 3
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data/output0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 7
+      dims: 7
+      dims: 3
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "conv0/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 113
+      dims: 113
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 2
+      stride: 2
+    }
+  }
+}
+nodes {
+  name: "data_1"
+  op: Data
+  input_tensors {
+    name: "data_1/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_2"
+  op: Data
+  input_tensors {
+    name: "data_2/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_2/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_3"
+  op: Data
+  input_tensors {
+    name: "data_3/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_3/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_4"
+  op: Data
+  input_tensors {
+    name: "data_4/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_4/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn0"
+  op: BatchNorm
+  parents: "conv0"
+  parents: "data_1"
+  parents: "data_2"
+  parents: "data_3"
+  parents: "data_4"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "conv0/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 113
+      dims: 113
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_2/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_3/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_4/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn0/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 113
+      dims: 113
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "pool"
+  op: MaxPooling
+  parents: "bn0"
+  src_tensors_indices: 0
+  input_tensors {
+    name: "bn0/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 113
+      dims: 113
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "pool/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    pool_params {
+      stride: 2
+      stride: 2
+      pool_size: 3
+      pool_size: 3
+    }
+  }
+}
+nodes {
+  name: "data_5"
+  op: Data
+  input_tensors {
+    name: "data_5/input0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_5/output0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res2a_2a"
+  op: Convolution3d
+  parents: "pool"
+  parents: "data_5"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "pool/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_5/output0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res2a_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_6"
+  op: Data
+  input_tensors {
+    name: "data_6/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_6/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_7"
+  op: Data
+  input_tensors {
+    name: "data_7/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_7/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_8"
+  op: Data
+  input_tensors {
+    name: "data_8/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_8/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_9"
+  op: Data
+  input_tensors {
+    name: "data_9/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_9/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "batch_norm"
+  op: BatchNorm
+  parents: "res2a_2a"
+  parents: "data_6"
+  parents: "data_7"
+  parents: "data_8"
+  parents: "data_9"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res2a_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_6/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_7/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_8/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_9/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "batch_norm/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "data_10"
+  op: Data
+  input_tensors {
+    name: "data_10/input0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 3
+      dims: 3
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_10/output0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 3
+      dims: 3
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res2a_2b"
+  op: Convolution3d
+  parents: "batch_norm"
+  parents: "data_10"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "batch_norm/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_10/output0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 3
+      dims: 3
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res2a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_11"
+  op: Data
+  input_tensors {
+    name: "data_11/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_11/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_12"
+  op: Data
+  input_tensors {
+    name: "data_12/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_12/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_13"
+  op: Data
+  input_tensors {
+    name: "data_13/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_13/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_14"
+  op: Data
+  input_tensors {
+    name: "data_14/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_14/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn2a_2b"
+  op: BatchNorm
+  parents: "res2a_2b"
+  parents: "data_11"
+  parents: "data_12"
+  parents: "data_13"
+  parents: "data_14"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res2a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_11/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_12/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_13/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_14/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn2a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "data_15"
+  op: Data
+  input_tensors {
+    name: "data_15/input0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_15/output0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res2a_1"
+  op: Convolution3d
+  parents: "pool"
+  parents: "data_15"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "pool/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_15/output0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res2a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_16"
+  op: Data
+  input_tensors {
+    name: "data_16/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_16/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_17"
+  op: Data
+  input_tensors {
+    name: "data_17/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_17/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_18"
+  op: Data
+  input_tensors {
+    name: "data_18/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_18/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_19"
+  op: Data
+  input_tensors {
+    name: "data_19/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_19/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn2a_1"
+  op: BatchNorm
+  parents: "res2a_1"
+  parents: "data_16"
+  parents: "data_17"
+  parents: "data_18"
+  parents: "data_19"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res2a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_16/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_17/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_18/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_19/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn2a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+  }
+}
+nodes {
+  name: "add2_a"
+  op: EltwiseAdd
+  parents: "bn2a_2b"
+  parents: "bn2a_1"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "bn2a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "bn2a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "add2_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "relu2_a"
+  op: ReLU
+  parents: "add2_a"
+  src_tensors_indices: 0
+  input_tensors {
+    name: "add2_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "relu2_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_20"
+  op: Data
+  input_tensors {
+    name: "data_20/input0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_20/output0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res2b_2a"
+  op: Convolution3d
+  parents: "relu2_a"
+  parents: "data_20"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "relu2_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_20/output0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res2b_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_21"
+  op: Data
+  input_tensors {
+    name: "data_21/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_21/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_22"
+  op: Data
+  input_tensors {
+    name: "data_22/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_22/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_23"
+  op: Data
+  input_tensors {
+    name: "data_23/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_23/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_24"
+  op: Data
+  input_tensors {
+    name: "data_24/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_24/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn2b_2a"
+  op: BatchNorm
+  parents: "res2b_2a"
+  parents: "data_21"
+  parents: "data_22"
+  parents: "data_23"
+  parents: "data_24"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res2b_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_21/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_22/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_23/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_24/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn2b_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "data_25"
+  op: Data
+  input_tensors {
+    name: "data_25/input0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 3
+      dims: 3
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_25/output0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 3
+      dims: 3
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res2b_2b"
+  op: Convolution3d
+  parents: "bn2b_2a"
+  parents: "data_25"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "bn2b_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_25/output0"
+    data_type: Float16
+    shape {
+      dims: 64
+      dims: 3
+      dims: 3
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res2b_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_26"
+  op: Data
+  input_tensors {
+    name: "data_26/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_26/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_27"
+  op: Data
+  input_tensors {
+    name: "data_27/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_27/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_28"
+  op: Data
+  input_tensors {
+    name: "data_28/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_28/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_29"
+  op: Data
+  input_tensors {
+    name: "data_29/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_29/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn2b_2b"
+  op: BatchNorm
+  parents: "res2b_2b"
+  parents: "data_26"
+  parents: "data_27"
+  parents: "data_28"
+  parents: "data_29"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res2b_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_26/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_27/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_28/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_29/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 64
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn2b_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "add2_b"
+  op: EltwiseAdd
+  parents: "bn2b_2b"
+  parents: "relu2_a"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "bn2b_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "relu2_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "add2_b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "relu2_b"
+  op: ReLU
+  parents: "add2_b"
+  src_tensors_indices: 0
+  input_tensors {
+    name: "add2_b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "relu2_b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_30"
+  op: Data
+  input_tensors {
+    name: "data_30/input0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_30/output0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res3a_2a"
+  op: Convolution3d
+  parents: "relu2_b"
+  parents: "data_30"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "relu2_b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_30/output0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res3a_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_31"
+  op: Data
+  input_tensors {
+    name: "data_31/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_31/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_32"
+  op: Data
+  input_tensors {
+    name: "data_32/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_32/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_33"
+  op: Data
+  input_tensors {
+    name: "data_33/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_33/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_34"
+  op: Data
+  input_tensors {
+    name: "data_34/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_34/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "batch_norm_1"
+  op: BatchNorm
+  parents: "res3a_2a"
+  parents: "data_31"
+  parents: "data_32"
+  parents: "data_33"
+  parents: "data_34"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res3a_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_31/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_32/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_33/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_34/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "batch_norm_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "data_35"
+  op: Data
+  input_tensors {
+    name: "data_35/input0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 3
+      dims: 3
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_35/output0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 3
+      dims: 3
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res3a_2b"
+  op: Convolution3d
+  parents: "batch_norm_1"
+  parents: "data_35"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "batch_norm_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_35/output0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 3
+      dims: 3
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res3a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 2
+      stride: 2
+    }
+  }
+}
+nodes {
+  name: "data_36"
+  op: Data
+  input_tensors {
+    name: "data_36/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_36/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_37"
+  op: Data
+  input_tensors {
+    name: "data_37/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_37/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_38"
+  op: Data
+  input_tensors {
+    name: "data_38/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_38/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_39"
+  op: Data
+  input_tensors {
+    name: "data_39/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_39/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn3a_2b"
+  op: BatchNorm
+  parents: "res3a_2b"
+  parents: "data_36"
+  parents: "data_37"
+  parents: "data_38"
+  parents: "data_39"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res3a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_36/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_37/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_38/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_39/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn3a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "data_40"
+  op: Data
+  input_tensors {
+    name: "data_40/input0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_40/output0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res3a_1"
+  op: Convolution3d
+  parents: "relu2_b"
+  parents: "data_40"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "relu2_b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 56
+      dims: 56
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_40/output0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 1
+      dims: 1
+      dims: 64
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res3a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 2
+      stride: 2
+    }
+  }
+}
+nodes {
+  name: "data_41"
+  op: Data
+  input_tensors {
+    name: "data_41/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_41/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_42"
+  op: Data
+  input_tensors {
+    name: "data_42/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_42/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_43"
+  op: Data
+  input_tensors {
+    name: "data_43/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_43/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_44"
+  op: Data
+  input_tensors {
+    name: "data_44/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_44/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn3a_1"
+  op: BatchNorm
+  parents: "res3a_1"
+  parents: "data_41"
+  parents: "data_42"
+  parents: "data_43"
+  parents: "data_44"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res3a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_41/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_42/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_43/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_44/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn3a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+  }
+}
+nodes {
+  name: "add3_a"
+  op: EltwiseAdd
+  parents: "bn3a_2b"
+  parents: "bn3a_1"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "bn3a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "bn3a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "add3_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "relu3_a"
+  op: ReLU
+  parents: "add3_a"
+  src_tensors_indices: 0
+  input_tensors {
+    name: "add3_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "relu3_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_45"
+  op: Data
+  input_tensors {
+    name: "data_45/input0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 1
+      dims: 1
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_45/output0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 1
+      dims: 1
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res3b_2a"
+  op: Convolution3d
+  parents: "relu3_a"
+  parents: "data_45"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "relu3_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_45/output0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 1
+      dims: 1
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res3b_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_46"
+  op: Data
+  input_tensors {
+    name: "data_46/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_46/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_47"
+  op: Data
+  input_tensors {
+    name: "data_47/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_47/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_48"
+  op: Data
+  input_tensors {
+    name: "data_48/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_48/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_49"
+  op: Data
+  input_tensors {
+    name: "data_49/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_49/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn3b_2a"
+  op: BatchNorm
+  parents: "res3b_2a"
+  parents: "data_46"
+  parents: "data_47"
+  parents: "data_48"
+  parents: "data_49"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res3b_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_46/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_47/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_48/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_49/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn3b_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "data_50"
+  op: Data
+  input_tensors {
+    name: "data_50/input0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 3
+      dims: 3
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_50/output0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 3
+      dims: 3
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res3b_2b"
+  op: Convolution3d
+  parents: "bn3b_2a"
+  parents: "data_50"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "bn3b_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_50/output0"
+    data_type: Float16
+    shape {
+      dims: 128
+      dims: 3
+      dims: 3
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res3b_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_51"
+  op: Data
+  input_tensors {
+    name: "data_51/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_51/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_52"
+  op: Data
+  input_tensors {
+    name: "data_52/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_52/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_53"
+  op: Data
+  input_tensors {
+    name: "data_53/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_53/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_54"
+  op: Data
+  input_tensors {
+    name: "data_54/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_54/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn3b_2b"
+  op: BatchNorm
+  parents: "res3b_2b"
+  parents: "data_51"
+  parents: "data_52"
+  parents: "data_53"
+  parents: "data_54"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res3b_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_51/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_52/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_53/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_54/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 128
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn3b_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "add3_b"
+  op: EltwiseAdd
+  parents: "bn3b_2b"
+  parents: "relu3_a"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "bn3b_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "relu3_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "add3_b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "relu3_b"
+  op: ReLU
+  parents: "add3_b"
+  src_tensors_indices: 0
+  input_tensors {
+    name: "add3_b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "relu3_b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_55"
+  op: Data
+  input_tensors {
+    name: "data_55/input0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 1
+      dims: 1
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_55/output0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 1
+      dims: 1
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res4a_2a"
+  op: Convolution3d
+  parents: "relu3_b"
+  parents: "data_55"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "relu3_b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_55/output0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 1
+      dims: 1
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res4a_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_56"
+  op: Data
+  input_tensors {
+    name: "data_56/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_56/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_57"
+  op: Data
+  input_tensors {
+    name: "data_57/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_57/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_58"
+  op: Data
+  input_tensors {
+    name: "data_58/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_58/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_59"
+  op: Data
+  input_tensors {
+    name: "data_59/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_59/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "batch_norm_2"
+  op: BatchNorm
+  parents: "res4a_2a"
+  parents: "data_56"
+  parents: "data_57"
+  parents: "data_58"
+  parents: "data_59"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res4a_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_56/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_57/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_58/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_59/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "batch_norm_2/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "data_60"
+  op: Data
+  input_tensors {
+    name: "data_60/input0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 3
+      dims: 3
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_60/output0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 3
+      dims: 3
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res4a_2b"
+  op: Convolution3d
+  parents: "batch_norm_2"
+  parents: "data_60"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "batch_norm_2/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_60/output0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 3
+      dims: 3
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res4a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 2
+      stride: 2
+    }
+  }
+}
+nodes {
+  name: "data_61"
+  op: Data
+  input_tensors {
+    name: "data_61/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_61/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_62"
+  op: Data
+  input_tensors {
+    name: "data_62/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_62/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_63"
+  op: Data
+  input_tensors {
+    name: "data_63/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_63/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_64"
+  op: Data
+  input_tensors {
+    name: "data_64/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_64/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn4a_2b"
+  op: BatchNorm
+  parents: "res4a_2b"
+  parents: "data_61"
+  parents: "data_62"
+  parents: "data_63"
+  parents: "data_64"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res4a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_61/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_62/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_63/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_64/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn4a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "data_65"
+  op: Data
+  input_tensors {
+    name: "data_65/input0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 1
+      dims: 1
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_65/output0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 1
+      dims: 1
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res4a_1"
+  op: Convolution3d
+  parents: "relu3_b"
+  parents: "data_65"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "relu3_b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 28
+      dims: 28
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_65/output0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 1
+      dims: 1
+      dims: 128
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res4a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 2
+      stride: 2
+    }
+  }
+}
+nodes {
+  name: "data_66"
+  op: Data
+  input_tensors {
+    name: "data_66/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_66/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_67"
+  op: Data
+  input_tensors {
+    name: "data_67/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_67/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_68"
+  op: Data
+  input_tensors {
+    name: "data_68/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_68/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_69"
+  op: Data
+  input_tensors {
+    name: "data_69/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_69/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn4a_1"
+  op: BatchNorm
+  parents: "res4a_1"
+  parents: "data_66"
+  parents: "data_67"
+  parents: "data_68"
+  parents: "data_69"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res4a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_66/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_67/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_68/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_69/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn4a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+  }
+}
+nodes {
+  name: "add4_a"
+  op: EltwiseAdd
+  parents: "bn4a_2b"
+  parents: "bn4a_1"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "bn4a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "bn4a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "add4_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "relu4_a"
+  op: ReLU
+  parents: "add4_a"
+  src_tensors_indices: 0
+  input_tensors {
+    name: "add4_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "relu4_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_70"
+  op: Data
+  input_tensors {
+    name: "data_70/input0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 1
+      dims: 1
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_70/output0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 1
+      dims: 1
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res4f_2a"
+  op: Convolution3d
+  parents: "relu4_a"
+  parents: "data_70"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "relu4_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_70/output0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 1
+      dims: 1
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res4f_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_71"
+  op: Data
+  input_tensors {
+    name: "data_71/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_71/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_72"
+  op: Data
+  input_tensors {
+    name: "data_72/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_72/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_73"
+  op: Data
+  input_tensors {
+    name: "data_73/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_73/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_74"
+  op: Data
+  input_tensors {
+    name: "data_74/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_74/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn4f_2a"
+  op: BatchNorm
+  parents: "res4f_2a"
+  parents: "data_71"
+  parents: "data_72"
+  parents: "data_73"
+  parents: "data_74"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res4f_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_71/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_72/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_73/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_74/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn4f_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "data_75"
+  op: Data
+  input_tensors {
+    name: "data_75/input0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 3
+      dims: 3
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_75/output0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 3
+      dims: 3
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res4f_2b"
+  op: Convolution3d
+  parents: "bn4f_2a"
+  parents: "data_75"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "bn4f_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_75/output0"
+    data_type: Float16
+    shape {
+      dims: 256
+      dims: 3
+      dims: 3
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res4f_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_76"
+  op: Data
+  input_tensors {
+    name: "data_76/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_76/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_77"
+  op: Data
+  input_tensors {
+    name: "data_77/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_77/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_78"
+  op: Data
+  input_tensors {
+    name: "data_78/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_78/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_79"
+  op: Data
+  input_tensors {
+    name: "data_79/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_79/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn4f_2b"
+  op: BatchNorm
+  parents: "res4f_2b"
+  parents: "data_76"
+  parents: "data_77"
+  parents: "data_78"
+  parents: "data_79"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res4f_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_76/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_77/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_78/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_79/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 256
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn4f_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "add4_f"
+  op: EltwiseAdd
+  parents: "bn4f_2b"
+  parents: "relu4_a"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "bn4f_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "relu4_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "add4_f/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "relu4_f"
+  op: ReLU
+  parents: "add4_f"
+  src_tensors_indices: 0
+  input_tensors {
+    name: "add4_f/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "relu4_f/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_80"
+  op: Data
+  input_tensors {
+    name: "data_80/input0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 1
+      dims: 1
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_80/output0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 1
+      dims: 1
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res5a_2a"
+  op: Convolution3d
+  parents: "relu4_f"
+  parents: "data_80"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "relu4_f/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_80/output0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 1
+      dims: 1
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res5a_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_81"
+  op: Data
+  input_tensors {
+    name: "data_81/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_81/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_82"
+  op: Data
+  input_tensors {
+    name: "data_82/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_82/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_83"
+  op: Data
+  input_tensors {
+    name: "data_83/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_83/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_84"
+  op: Data
+  input_tensors {
+    name: "data_84/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_84/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "batch_norm_3"
+  op: BatchNorm
+  parents: "res5a_2a"
+  parents: "data_81"
+  parents: "data_82"
+  parents: "data_83"
+  parents: "data_84"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res5a_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_81/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_82/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_83/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_84/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "batch_norm_3/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "data_85"
+  op: Data
+  input_tensors {
+    name: "data_85/input0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 3
+      dims: 3
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_85/output0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 3
+      dims: 3
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res5a_2b"
+  op: Convolution3d
+  parents: "batch_norm_3"
+  parents: "data_85"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "batch_norm_3/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_85/output0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 3
+      dims: 3
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res5a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 2
+      stride: 2
+    }
+  }
+}
+nodes {
+  name: "data_86"
+  op: Data
+  input_tensors {
+    name: "data_86/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_86/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_87"
+  op: Data
+  input_tensors {
+    name: "data_87/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_87/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_88"
+  op: Data
+  input_tensors {
+    name: "data_88/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_88/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_89"
+  op: Data
+  input_tensors {
+    name: "data_89/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_89/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn5a_2b"
+  op: BatchNorm
+  parents: "res5a_2b"
+  parents: "data_86"
+  parents: "data_87"
+  parents: "data_88"
+  parents: "data_89"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res5a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_86/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_87/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_88/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_89/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn5a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "data_90"
+  op: Data
+  input_tensors {
+    name: "data_90/input0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 1
+      dims: 1
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_90/output0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 1
+      dims: 1
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res5a_1"
+  op: Convolution3d
+  parents: "relu4_f"
+  parents: "data_90"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "relu4_f/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 14
+      dims: 14
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_90/output0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 1
+      dims: 1
+      dims: 256
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res5a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 2
+      stride: 2
+    }
+  }
+}
+nodes {
+  name: "data_91"
+  op: Data
+  input_tensors {
+    name: "data_91/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_91/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_92"
+  op: Data
+  input_tensors {
+    name: "data_92/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_92/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_93"
+  op: Data
+  input_tensors {
+    name: "data_93/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_93/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_94"
+  op: Data
+  input_tensors {
+    name: "data_94/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_94/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn5a_1"
+  op: BatchNorm
+  parents: "res5a_1"
+  parents: "data_91"
+  parents: "data_92"
+  parents: "data_93"
+  parents: "data_94"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res5a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_91/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_92/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_93/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_94/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn5a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+  }
+}
+nodes {
+  name: "add5_a"
+  op: EltwiseAdd
+  parents: "bn5a_2b"
+  parents: "bn5a_1"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "bn5a_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "bn5a_1/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "add5_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "relu5_a"
+  op: ReLU
+  parents: "add5_a"
+  src_tensors_indices: 0
+  input_tensors {
+    name: "add5_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "relu5_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_95"
+  op: Data
+  input_tensors {
+    name: "data_95/input0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 1
+      dims: 1
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_95/output0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 1
+      dims: 1
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res5c_2a"
+  op: Convolution3d
+  parents: "relu5_a"
+  parents: "data_95"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "relu5_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_95/output0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 1
+      dims: 1
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res5c_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_96"
+  op: Data
+  input_tensors {
+    name: "data_96/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_96/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_97"
+  op: Data
+  input_tensors {
+    name: "data_97/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_97/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_98"
+  op: Data
+  input_tensors {
+    name: "data_98/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_98/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_99"
+  op: Data
+  input_tensors {
+    name: "data_99/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_99/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn5c_2a"
+  op: BatchNorm
+  parents: "res5c_2a"
+  parents: "data_96"
+  parents: "data_97"
+  parents: "data_98"
+  parents: "data_99"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res5c_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_96/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_97/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_98/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_99/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn5c_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "data_100"
+  op: Data
+  input_tensors {
+    name: "data_100/input0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 3
+      dims: 3
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_100/output0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 3
+      dims: 3
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "res5c_2b"
+  op: Convolution3d
+  parents: "bn5c_2a"
+  parents: "data_100"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "bn5c_2a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_100/output0"
+    data_type: Float16
+    shape {
+      dims: 512
+      dims: 3
+      dims: 3
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "res5c_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    conv_params {
+      padding: SamePadding
+      stride: 1
+      stride: 1
+    }
+  }
+}
+nodes {
+  name: "data_101"
+  op: Data
+  input_tensors {
+    name: "data_101/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_101/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_102"
+  op: Data
+  input_tensors {
+    name: "data_102/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_102/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_103"
+  op: Data
+  input_tensors {
+    name: "data_103/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_103/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_104"
+  op: Data
+  input_tensors {
+    name: "data_104/input0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_104/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "bn5c_2b"
+  op: BatchNorm
+  parents: "res5c_2b"
+  parents: "data_101"
+  parents: "data_102"
+  parents: "data_103"
+  parents: "data_104"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "res5c_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_101/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_102/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_103/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_104/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 512
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "bn5c_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+    act_params {
+      activation: ReLU
+    }
+  }
+}
+nodes {
+  name: "add5_c"
+  op: EltwiseAdd
+  parents: "bn5c_2b"
+  parents: "relu5_a"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "bn5c_2b/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "relu5_a/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "add5_c/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "relu5_c"
+  op: ReLU
+  parents: "add5_c"
+  src_tensors_indices: 0
+  input_tensors {
+    name: "add5_c/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "relu5_c/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "reorder"
+  op: Reorder
+  parents: "relu5_c"
+  src_tensors_indices: 0
+  input_tensors {
+    name: "relu5_c/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 7
+      dims: 7
+      dims: 512
+      layout: NHWC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "reorder/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 25088
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "data_105"
+  op: Data
+  input_tensors {
+    name: "data_105/input0"
+    data_type: Float16
+    shape {
+      dims: 10
+      dims: 25088
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "data_105/output0"
+    data_type: Float16
+    shape {
+      dims: 10
+      dims: 25088
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+}
+nodes {
+  name: "fc"
+  op: InnerProduct
+  parents: "reorder"
+  parents: "data_105"
+  src_tensors_indices: 0
+  src_tensors_indices: 0
+  input_tensors {
+    name: "reorder/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 25088
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  input_tensors {
+    name: "data_105/output0"
+    data_type: Float16
+    shape {
+      dims: 10
+      dims: 25088
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  output_tensors {
+    name: "fc/output0"
+    data_type: Float16
+    shape {
+      dims: 1
+      dims: 10
+      layout: NC
+      alignment: 8
+    }
+    data_format: Uncompressed
+  }
+  params {
+  }
+}
+backend: "SMV"
+mem_policy: AllDma

@@ -1,10 +1,10 @@
+#include "smaug/operators/smv/smv_less_op.h"
 #include "smaug/core/backend.h"
 #include "smaug/operators/common.h"
-#include "smaug/operators/smv/smv_less_op.h"
-#include "smaug/operators/smv/smv_unary_op_common.h"
 #include "smaug/operators/smv/smv_kernels.h"
+#include "smaug/operators/smv/smv_unary_op_common.h"
 #include "smaug/utility/debug_stream.h"
-
+#include <fstream>
 namespace smaug {
 
 void SmvLessOp::runX(TiledTensor& inputs0,
@@ -18,6 +18,7 @@ void SmvLessOp::runX(TiledTensor& inputs0,
             smv::kEltwiseOpHw, "host_inputs1", getInputsMemType());
     setArrayMemTypeIfSimulating(
             smv::kEltwiseOpHw, "host_results", getOutputsMemType());
+
     for (int i = 0; i < inputs0.size(); i++) {
         dout(1) << "Input0: " << i << ", input1: " << i << ", output: " << i
                 << "\n";
@@ -26,6 +27,30 @@ void SmvLessOp::runX(TiledTensor& inputs0,
         Tensor* outputTile = outputs[i];
         const TensorShape& inputShape = input0Tile->getShape();
         const TensorShape& outputShape = outputTile->getShape();
+        std::cout <<"\n*Less op"<<std::endl;
+//        std::ofstream summary_file;
+//        summary_file.open("./outputs/nnet_fwd_summary_5",std::ios::app);
+//        if(!summary_file.fail()) {
+////        summary_file << "\n******Accelerator Id: " <<smv::kEltwiseOpHw<<"*****"<<std::endl;
+//        summary_file << "inputTileIdx: " <<i<<",\t";
+//        summary_file << "outputTileIdx: " <<i<<std::endl;
+//        #if 1
+//            summary_file<<"input Tile dimension: ";
+//            for(int j{0};j<inputShape.ndims();j++){
+////                if(inputShape !=NULL)
+//                    summary_file << "[" << j << "]: " << inputShape[j]<<"\t";
+//            }
+//            summary_file <<"\noutput tile dimension: ";
+//            for(int j{0};j<outputShape.ndims();j++){
+////                if(outputShape !=NULL)
+//                    summary_file << "[" << j << "]: " << outputShape[j]<<"\t";
+//            }
+//            summary_file << std::endl;
+//        #endif
+//        }
+//        else
+//            std::cout << "failed to write to summary file"<<std::endl;
+//        summary_file.close();
         mapArrayToAccel(smv::kEltwiseOpHw, "host_inputs0",
                         input0Tile->data<float16>(),
                         inputShape.storageSize() * sizeof(float16));
@@ -55,9 +80,12 @@ void SmvLessOp::tile() {
                      inputs0->getShape().storageSize());
     TensorShape tileShape(
             { 1, maxTileSize }, DataLayout::NC, SmvBackend::Alignment);
-    tiledTensors[0] = generateTiles(inputs0, tileShape, this, false);
-    tiledTensors[1] = generateTiles(inputs1, tileShape, this, false);
-    tiledTensors[2] = generateTiles(outputs, tileShape, this, false);
+    tiledTensors[0] =
+            generateTiledTensorPerBatchNC(inputs0, tileShape, this, false);
+    tiledTensors[1] =
+            generateTiledTensorPerBatchNC(inputs1, tileShape, this, false);
+    tiledTensors[2] =
+            generateTiledTensorPerBatchNC(outputs, tileShape, this, false);
 }
 
 void SmvLessOp::run() {
@@ -133,9 +161,12 @@ void SmvLessEqualOp::tile() {
                      inputs0->getShape().storageSize());
     TensorShape tileShape(
             { 1, maxTileSize }, DataLayout::NC, SmvBackend::Alignment);
-    tiledTensors[0] = generateTiles(inputs0, tileShape, this, false);
-    tiledTensors[1] = generateTiles(inputs1, tileShape, this, false);
-    tiledTensors[2] = generateTiles(outputs, tileShape, this, false);
+    tiledTensors[0] =
+            generateTiledTensorPerBatchNC(inputs0, tileShape, this, false);
+    tiledTensors[1] =
+            generateTiledTensorPerBatchNC(inputs1, tileShape, this, false);
+    tiledTensors[2] =
+            generateTiledTensorPerBatchNC(outputs, tileShape, this, false);
 }
 
 void SmvLessEqualOp::run() {

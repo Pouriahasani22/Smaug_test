@@ -58,6 +58,8 @@ template <typename Backend> class EluOp;
 template <typename Backend> class SeluOp;
 template <typename Backend> class TanhOp;
 template <typename Backend> class HardTanhOp;
+template <typename Backend> class PaddingOp;
+
 #endif
 
 /**
@@ -91,6 +93,10 @@ class ReferenceBackend {
     static const std::string Name;
     static const DataLayout DefaultInputDataLayout = DataLayout::NCHW;
 
+    static int SpadSize() { return 0; }
+    static void initGlobals() {}
+    static void freeGlobals() {}
+
     DECL_CREATE_OP(ConvolutionOp);
     DECL_CREATE_OP(DataOp);
     DECL_CREATE_OP(DepthwiseConvolutionOp);
@@ -119,9 +125,9 @@ class ReferenceBackend {
     DECL_CREATE_OP(SeluOp);
     DECL_CREATE_OP(TanhOp);
     DECL_CREATE_OP(HardTanhOp);
+    DECL_CREATE_OP(PaddingOp);
 
 #undef DECL_CREATE_OP
-
 };
 
 /**
@@ -234,10 +240,10 @@ class SmvBackend {
     DECL_CREATE_OP(FlattenOp);
     DECL_CREATE_OP(SwitchOp);
     DECL_CREATE_OP(MergeOp);
+    DECL_CREATE_OP(PaddingOp);
 
 #undef DECL_SMV_OP
 #undef DECL_CREATE_OP
-
 };
 
 }  // namespace smaug

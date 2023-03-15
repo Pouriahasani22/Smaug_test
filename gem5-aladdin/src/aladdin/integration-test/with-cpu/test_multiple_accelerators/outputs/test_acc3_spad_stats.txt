@@ -1,0 +1,6 @@
+Array: store_loc_acc, size = 512, partitions = 8, word size = 4, reads = 128, writes = 256
+Array: store_vals_acc, size = 512, partitions = 8, word size = 4, reads = 128, writes = 128
+===============
+Array: store_loc_acc, size = 512, partitions = 8, word size = 4, reads = 256, writes = 512
+Array: store_vals_acc, size = 512, partitions = 8, word size = 4, reads = 256, writes = 256
+===============

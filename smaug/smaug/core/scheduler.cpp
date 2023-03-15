@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <fstream>
 #include "smaug/utility/debug_stream.h"
 #include "smaug/utility/thread_pool.h"
 #include "smaug/core/tensor.h"
@@ -71,6 +71,14 @@ Tensor* Scheduler::scheduleReady() {
 
 void Scheduler::maybeRunOperator(Operator* op) {
     if (!op->isDead()) {
+        std::ofstream trace;
+        trace.open("./outputs/nnet_fwd_summary",std::ios::app);
+        if(!trace.fail()) {
+            trace << op->getName() << "\t: " << OpType_Name(op->getOpType()) << std::endl;
+            trace.close();
+        }
+        else
+            std::cout << "failed to write to summary file"<<std::endl;
         op->run();
     } else {
         for (auto output : op->getOutputs())

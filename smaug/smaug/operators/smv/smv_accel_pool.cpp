@@ -1,5 +1,6 @@
 #include <string>
-
+#include <iostream>
+#include <fstream>
 #include "smaug/operators/common.h"
 #include "smaug/operators/smv/smv_accel_pool.h"
 #include "smaug/utility/debug_stream.h"
@@ -38,13 +39,21 @@ void SmvAcceleratorPool::joinAll() {
 
 int SmvAcceleratorPool::getNextAvailableAccelerator(int currAccelIdx) {
     // Round-robin policy.
+        std::ofstream trace;
+        trace.open("./track/trace",std::ios::app);
+        trace << "Current Accels Id: "<<currAccelIdx<<std::endl;
+        
     int pickedAccel = currAccelIdx + 1;
     if (pickedAccel == size)
         pickedAccel = 0;
     // If the picked accelerator has not finished, wait until it returns.
+
     join(pickedAccel);
     if (size > 1)
         dout(1) << "Switched to accelerator " << pickedAccel << ".\n";
+            trace << "Next Accels Id: "<<pickedAccel<<std::endl;
+            trace<< "===================="<<std::endl;
+        trace.close();
     return pickedAccel;
 }
 

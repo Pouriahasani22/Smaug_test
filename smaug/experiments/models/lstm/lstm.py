@@ -8,7 +8,7 @@ def generate_random_data(shape):
   return (r.rand(*shape) * 0.005).astype(np.float32)
 
 def create_lstm_model():
-  with sg.Graph(name="lstm_ref", backend="Reference") as graph:
+  with sg.Graph(name="lstm_smv", backend="SMV") as graph:
     input_tensor = sg.Tensor(
         data_layout=sg.NTC, tensor_data=generate_random_data((1, 4, 32)))
     # sg.Tensors and kernels are initialized as NC layout.

@@ -7,7 +7,10 @@
 #include "ExecNode.h"
 #include "DatabaseDeps.h"
 #include "graph_opts/all_graph_opts.h"
-
+#include <iostream>
+#include <cstdio>
+#include <fstream>
+#include <boost/stacktrace.hpp>
 using namespace SrcTypes;
 
 BaseDatapath::BaseDatapath(std::string& bench,
@@ -15,7 +18,7 @@ BaseDatapath::BaseDatapath(std::string& bench,
                            std::string& config_file)
     : benchName(bench), current_trace_off(0) {
   parse_config(benchName, config_file);
-
+  trace_file_name_print = trace_file_name;
   use_db = false;
   if (!fileExists(trace_file_name)) {
     std::cerr << "-------------------------------" << std::endl;
@@ -30,7 +33,7 @@ BaseDatapath::BaseDatapath(std::string& bench,
   /* Remove the old file. */
   if (access(file_name.c_str(), F_OK) != -1 && remove(file_name.c_str()) != 0)
     perror("Failed to delete the old summary file");
-
+std::cout << "insdie basedatapath constructor"<<std::endl;
   struct stat st;
   stat(trace_file_name.c_str(), &st);
   trace_size = st.st_size;
@@ -206,7 +209,17 @@ void BaseDatapath::treeHeightReduction() {
 }
 
 // called in the end of the whole flow
-void BaseDatapath::dumpStats() {
+void BaseDatapath::dumpStats(const char* str ) {
+  std::ofstream output;
+  std::ofstream outputFile;
+  output.open("./track/stack",std::ios::app);
+  outputFile.open("./track/stack1",std::ios::app);
+    outputFile << boost::stacktrace::stacktrace()<<std::endl;
+   outputFile << "kir"<<std::endl;
+   output << "kir"<<std::endl;
+  output << str << std::endl;
+  output.close();
+  outputFile.close();
   rescheduleNodesWhenNeeded();
   upsampleLoops();
   computeRegStats();
@@ -759,6 +772,7 @@ void BaseDatapath::writeSummary(std::ostream& outfile,
                                 summary_data_t& summary) {
   outfile << "===============================" << std::endl;
   outfile << "        Aladdin Results        " << std::endl;
+  outfile << "=== trace file name" << trace_file_name_print<<std::endl;
   outfile << "===============================" << std::endl;
   outfile << "Running : " << summary.benchName << std::endl;
   outfile << "Top level function: " << summary.topLevelFunctionName << std::endl;
@@ -772,6 +786,11 @@ void BaseDatapath::writeSummary(std::ostream& outfile,
           << std::endl;
   outfile << "Avg FU leakage Power: " << summary.fu_leakage_power << " mW"
           << std::endl;
+          std::ofstream outputFile;
+          outputFile.open("./track/stack1",std::ios::app);
+          outputFile << boost::stacktrace::stacktrace()<<std::endl;
+          outputFile.close();
+  
   outfile << "Avg MEM Power: " << summary.avg_mem_power << " mW" << std::endl;
   outfile << "Avg MEM Dynamic Power: " << summary.avg_mem_dynamic_power << " mW"
           << std::endl;

@@ -5,7 +5,7 @@
 #include "smaug/operators/smv/smv_kernels.h"
 #include "smaug/operators/smv/smv_accel_pool.h"
 #include "smaug/utility/debug_stream.h"
-
+#include <fstream>
 namespace smaug {
 namespace smv {
 namespace bn {
@@ -124,6 +124,7 @@ void SmvBatchNormOp::runNHWC(TiledTensor& inputs,
     }
     SmvAcceleratorPool accelPool(numAcceleratorsAvailable);
     int currAccelIdx = 0;
+
     for (int N = 0; N < inputNumTiles; N++) {
         for (int H = 0; H < inputRowTiles; H++) {
             for (int W = 0; W < inputColTiles; W++) {
@@ -132,6 +133,7 @@ void SmvBatchNormOp::runNHWC(TiledTensor& inputs,
                 for (int C = 0; C < inputChanTiles; C++) {
                     int inputTileIdx = inputIdx(N, H, W, C);
                     int outputTileIdx = outputIdx(N, H, W, C);
+
                     dout(1) << "Input: " << inputTileIdx << ", Weight: 0"
                             << ", output: " << outputTileIdx << "\n";
                     Tensor* inputTile = inputs.getTileWithData(inputTileIdx);
@@ -147,7 +149,31 @@ void SmvBatchNormOp::runNHWC(TiledTensor& inputs,
                             outputShape.storageSize() * sizeof(float16));
                     int inputDims[4] = { inputShape[0], inputShape[1],
                                          inputShape[2], inputShape[3] };
-
+                    std::cout <<"\nBatch norm"<<std::endl;
+//                std::ofstream summary_file;
+//                summary_file.open("./outputs/nnet_fwd_summary_5",std::ios::app);
+//                    if(!summary_file.fail()) {
+//                summary_file << "\n******Accelerator Id: " <<smv::kBatchNormHw + currAccelIdx<<"*****"<<std::endl;
+//                    summary_file << "inputTileIdx: " <<inputTileIdx<<",\t";
+//                    summary_file << "outputTileIdx: " <<outputTileIdx<<std::endl;
+//#if 1
+//                    summary_file<<"input Tile dimension: ";
+//                    for(int j{0};j<4;j++) {
+//                        if(inputDims != NULL)
+//                            summary_file << "[" << j << "]: " << inputDims[j] << "\t";
+//                    }
+//                    summary_file <<"\noutput tile dimension: ";
+//                    for(int j{0};j<4;j++) {
+//                        if(inputDims != NULL)
+//                            summary_file << "[" << j << "]: " << inputDims[j] << "\t";
+//                    }
+//                    summary_file << std::endl;
+//#endif
+//
+//                    }
+//                    else
+//                        std::cout << "failed to write to summary file"<<std::endl;
+//                    summary_file.close();
                     std::unique_ptr<volatile int> finishFlag =
                             invokeKernelNoBlock(
                                     currAccelIdx,
@@ -170,6 +196,7 @@ void SmvBatchNormOp::runNHWC(TiledTensor& inputs,
             }
         }
     }
+
     accelPool.joinAll();
 }
 

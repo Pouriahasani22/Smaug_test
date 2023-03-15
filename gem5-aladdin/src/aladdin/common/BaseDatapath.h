@@ -229,7 +229,7 @@ class BaseDatapath {
   virtual void prepareForScheduling();
   virtual int rescheduleNodesWhenNeeded();
   void dumpGraph(std::string graph_name);
-  void dumpStats();
+  void dumpStats(const char* str = __builtin_FUNCTION());
 
   //=------------ Clean up functions -----------=//
 
@@ -413,6 +413,7 @@ class BaseDatapath {
   gzFile trace_file;
   size_t current_trace_off;
   size_t trace_size;
+  std::string trace_file_name_print;
 };
 
 #endif

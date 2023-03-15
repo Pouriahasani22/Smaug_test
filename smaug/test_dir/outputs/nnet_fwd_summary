@@ -1,0 +1,708 @@
+===============================
+        Aladdin Results        
+=== trace file name./dynamic_trace_acc0.gz
+===============================
+Running : ./outputs/nnet_fwd
+Top level function: smv_conv3d_nhwc_vec_fxp
+Cycle : 90341 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 132.336 mW
+Idle FU Cycles: 25002 cycles
+Avg FU Power: 110.845 mW
+Avg FU Dynamic Power: 101.479 mW
+Avg FU leakage Power: 9.36592 mW
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+here
+Avg MEM Power: 21.4907 mW
+Avg MEM Dynamic Power: 2.57972 mW
+Avg MEM Leakage Power: 18.911 mW
+Total Area: 1.91503e+06 uM^2
+FU Area: 775140 uM^2
+MEM Area: 1.13989e+06 uM^2
+Num of Multipliers (32-bit): 37
+Num of Adders (32-bit): 138
+Num of Bit-wise Operators (32-bit): 12
+Num of Shifters (32-bit): 21
+Num of Registers (32-bit): 1798
+===============================
+        Aladdin Results        
+===============================
+===============================
+        Aladdin Results        
+=== trace file name./dynamic_trace_acc0.gz
+===============================
+Running : ./outputs/nnet_fwd
+Top level function: smv_conv3d_nhwc_vec_fxp
+Cycle : 77348 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 152.384 mW
+Idle FU Cycles: 13645 cycles
+Avg FU Power: 127.754 mW
+Avg FU Dynamic Power: 118.486 mW
+Avg FU leakage Power: 9.26729 mW
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+here
+Avg MEM Power: 24.6309 mW
+Avg MEM Dynamic Power: 5.71992 mW
+Avg MEM Leakage Power: 18.911 mW
+Total Area: 1.90478e+06 uM^2
+FU Area: 764898 uM^2
+MEM Area: 1.13989e+06 uM^2
+Num of Multipliers (32-bit): 36
+Num of Adders (32-bit): 122
+Num of Bit-wise Operators (32-bit): 11
+Num of Shifters (32-bit): 15
+Num of Registers (32-bit): 1809
+===============================
+        Aladdin Results        
+===============================
+===============================
+        Aladdin Results        
+=== trace file name./dynamic_trace_acc0.gz
+===============================
+Running : ./outputs/nnet_fwd
+Top level function: smv_maxpooling_nhwc_vec_fxp
+Cycle : 18270 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 48.4245 mW
+Idle FU Cycles: 13711 cycles
+Avg FU Power: 2.96834 mW
+Avg FU Dynamic Power: 0.512361 mW
+Avg FU leakage Power: 2.45598 mW
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+here
+Avg MEM Power: 45.4562 mW
+Avg MEM Dynamic Power: 26.5452 mW
+Avg MEM Leakage Power: 18.911 mW
+Total Area: 1.34185e+06 uM^2
+FU Area: 201963 uM^2
+MEM Area: 1.13989e+06 uM^2
+Num of Multipliers (32-bit): 6
+Num of Adders (32-bit): 23
+Num of Bit-wise Operators (32-bit): 2
+Num of Shifters (32-bit): 7
+Num of Registers (32-bit): 20
+===============================
+        Aladdin Results        
+===============================
+===============================
+        Aladdin Results        
+=== trace file name./dynamic_trace_acc0.gz
+===============================
+Running : ./outputs/nnet_fwd
+Top level function: smv_maxpooling_nhwc_vec_fxp
+Cycle : 24599 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 46.0294 mW
+Idle FU Cycles: 18847 cycles
+Avg FU Power: 4.89741 mW
+Avg FU Dynamic Power: 0.506817 mW
+Avg FU leakage Power: 4.39059 mW
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+here
+Avg MEM Power: 41.132 mW
+Avg MEM Dynamic Power: 22.221 mW
+Avg MEM Leakage Power: 18.911 mW
+Total Area: 1.50036e+06 uM^2
+FU Area: 360478 uM^2
+MEM Area: 1.13989e+06 uM^2
+Num of Multipliers (32-bit): 7
+Num of Adders (32-bit): 39
+Num of Bit-wise Operators (32-bit): 4
+Num of Shifters (32-bit): 11
+Num of Registers (32-bit): 786
+===============================
+        Aladdin Results        
+===============================
+===============================
+        Aladdin Results        
+=== trace file name./dynamic_trace_acc0.gz
+===============================
+Running : ./outputs/nnet_fwd
+Top level function: smv_matrix_multiply_transpose_nc_vec_fxp
+Cycle : 33202 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 42.0515 mW
+Idle FU Cycles: 26836 cycles
+Avg FU Power: 4.50467 mW
+Avg FU Dynamic Power: 1.61856 mW
+Avg FU leakage Power: 2.88611 mW
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+here
+Avg MEM Power: 37.5468 mW
+Avg MEM Dynamic Power: 18.6358 mW
+Avg MEM Leakage Power: 18.911 mW
+Total Area: 1.38759e+06 uM^2
+FU Area: 247702 uM^2
+MEM Area: 1.13989e+06 uM^2
+Num of Multipliers (32-bit): 7
+Num of Adders (32-bit): 128
+Num of Bit-wise Operators (32-bit): 33
+Num of Shifters (32-bit): 14
+Num of Registers (32-bit): 56
+===============================
+        Aladdin Results        
+===============================
+===============================
+        Aladdin Results        
+=== trace file name./dynamic_trace_acc1.gz
+===============================
+Running : ./outputs/nnet_fwd
+Top level function: smv_matrix_multiply_transpose_nc_vec_fxp
+Cycle : 15513 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 27.1385 mW
+Idle FU Cycles: 13005 cycles
+Avg FU Power: 6.1761 mW
+Avg FU Dynamic Power: 2.99938 mW
+Avg FU leakage Power: 3.17672 mW
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+here
+Avg MEM Power: 20.9624 mW
+Avg MEM Dynamic Power: 2.05143 mW
+Avg MEM Leakage Power: 18.911 mW
+Total Area: 1.4112e+06 uM^2
+FU Area: 271314 uM^2
+MEM Area: 1.13989e+06 uM^2
+Num of Multipliers (32-bit): 9
+Num of Adders (32-bit): 128
+Num of Bit-wise Operators (32-bit): 33
+Num of Shifters (32-bit): 14
+Num of Registers (32-bit): 113
+===============================
+        Aladdin Results        
+===============================
+===============================
+        Aladdin Results        
+=== trace file name./dynamic_trace_acc1.gz
+===============================
+Running : ./outputs/nnet_fwd
+Top level function: smv_matrix_multiply_transpose_nc_vec_fxp
+Cycle : 7135 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 34.776 mW
+Idle FU Cycles: 5821 cycles
+Avg FU Power: 9.37164 mW
+Avg FU Dynamic Power: 6.17835 mW
+Avg FU leakage Power: 3.19329 mW
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+here
+Avg MEM Power: 25.4043 mW
+Avg MEM Dynamic Power: 6.49334 mW
+Avg MEM Leakage Power: 18.911 mW
+Total Area: 1.41254e+06 uM^2
+FU Area: 272654 uM^2
+MEM Area: 1.13989e+06 uM^2
+Num of Multipliers (32-bit): 9
+Num of Adders (32-bit): 128
+Num of Bit-wise Operators (32-bit): 33
+Num of Shifters (32-bit): 14
+Num of Registers (32-bit): 120
+===============================
+        Aladdin Results        
+===============================
+===============================
+        Aladdin Results        
+=== trace file name./dynamic_trace_acc1.gz
+===============================
+Running : ./outputs/nnet_fwd
+Top level function: smv_matrix_multiply_transpose_nc_vec_fxp
+Cycle : 6348 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 38.6375 mW
+Idle FU Cycles: 5033 cycles
+Avg FU Power: 10.143 mW
+Avg FU Dynamic Power: 6.945 mW
+Avg FU leakage Power: 3.19802 mW
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+here
+Avg MEM Power: 28.4945 mW
+Avg MEM Dynamic Power: 9.58352 mW
+Avg MEM Leakage Power: 18.911 mW
+Total Area: 1.41292e+06 uM^2
+FU Area: 273037 uM^2
+MEM Area: 1.13989e+06 uM^2
+Num of Multipliers (32-bit): 9
+Num of Adders (32-bit): 128
+Num of Bit-wise Operators (32-bit): 33
+Num of Shifters (32-bit): 14
+Num of Registers (32-bit): 122
+===============================
+        Aladdin Results        
+===============================
+===============================
+        Aladdin Results        
+=== trace file name./dynamic_trace_acc1.gz
+===============================
+Running : ./outputs/nnet_fwd
+Top level function: smv_matrix_multiply_transpose_nc_vec_fxp
+Cycle : 776 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 105.477 mW
+Idle FU Cycles: 660 cycles
+Avg FU Power: 6.92822 mW
+Avg FU Dynamic Power: 3.77307 mW
+Avg FU leakage Power: 3.15515 mW
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+here
+Avg MEM Power: 98.5485 mW
+Avg MEM Dynamic Power: 79.6375 mW
+Avg MEM Leakage Power: 18.911 mW
+Total Area: 1.40962e+06 uM^2
+FU Area: 269731 uM^2
+MEM Area: 1.13989e+06 uM^2
+Num of Multipliers (32-bit): 9
+Num of Adders (32-bit): 132
+Num of Bit-wise Operators (32-bit): 35
+Num of Shifters (32-bit): 12
+Num of Registers (32-bit): 101
+===============================
+        Aladdin Results        
+===============================
+===============================
+        Aladdin Results        
+=== trace file name./dynamic_trace_acc0.gz
+===============================
+Running : ./outputs/nnet_fwd
+Top level function: smv_matrix_multiply_transpose_nc_vec_fxp
+Cycle : 26064 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 49.5269 mW
+Idle FU Cycles: 20892 cycles
+Avg FU Power: 4.77332 mW
+Avg FU Dynamic Power: 1.96981 mW
+Avg FU leakage Power: 2.80352 mW
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+here
+Avg MEM Power: 44.7536 mW
+Avg MEM Dynamic Power: 25.8426 mW
+Avg MEM Leakage Power: 18.911 mW
+Total Area: 1.38085e+06 uM^2
+FU Area: 240967 uM^2
+MEM Area: 1.13989e+06 uM^2
+Num of Multipliers (32-bit): 6
+Num of Adders (32-bit): 128
+Num of Bit-wise Operators (32-bit): 33
+Num of Shifters (32-bit): 14
+Num of Registers (32-bit): 54
+===============================
+        Aladdin Results        
+===============================
+===============================
+        Aladdin Results        
+=== trace file name./dynamic_trace_acc0.gz
+===============================
+Running : ./outputs/nnet_fwd
+Top level function: smv_matrix_multiply_transpose_nc_vec_fxp
+Cycle : 25844 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 51.8917 mW
+Idle FU Cycles: 20672 cycles
+Avg FU Power: 4.79711 mW
+Avg FU Dynamic Power: 1.9865 mW
+Avg FU leakage Power: 2.81061 mW
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+here
+Avg MEM Power: 47.0946 mW
+Avg MEM Dynamic Power: 28.1836 mW
+Avg MEM Leakage Power: 18.911 mW
+Total Area: 1.38143e+06 uM^2
+FU Area: 241542 uM^2
+MEM Area: 1.13989e+06 uM^2
+Num of Multipliers (32-bit): 6
+Num of Adders (32-bit): 128
+Num of Bit-wise Operators (32-bit): 33
+Num of Shifters (32-bit): 14
+Num of Registers (32-bit): 57
+===============================
+        Aladdin Results        
+===============================
+===============================
+        Aladdin Results        
+=== trace file name./dynamic_trace_acc0.gz
+===============================
+Running : ./outputs/nnet_fwd
+Top level function: smv_matrix_multiply_transpose_nc_vec_fxp
+Cycle : 1626 cycles
+Upsampled Cycle : 0 cycles
+Avg Power: 473.829 mW
+Idle FU Cycles: 1282 cycles
+Avg FU Power: 4.85067 mW
+Avg FU Dynamic Power: 2.05899 mW
+Avg FU leakage Power: 2.79168 mW
+ 0# BaseDatapath::writeSummary(std::ostream&, summary_data_t&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 1# BaseDatapath::outputPerCycleActivity(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<MemoryActivity, std::allocator<MemoryActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<MemoryActivity, std::allocator<MemoryActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<FunctionActivity, std::allocator<FunctionActivity> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<FunctionActivity, std::allocator<FunctionActivity> > > > >&, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, FunctionActivity, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, FunctionActivity> > >&) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 2# BaseDatapath::writePerCycleActivity() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 3# BaseDatapath::dumpStats(char const*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 4# HybridDatapath::step() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 5# EventWrapper<HybridDatapath, &HybridDatapath::eventStep>::process() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 6# EventQueue::serviceOne() in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 7# doSimLoop(EventQueue*) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 8# simulate(unsigned long) in /workspace/gem5-aladdin/build/X86/gem5.opt
+ 9# 0x000055F583103831 in /workspace/gem5-aladdin/build/X86/gem5.opt
+10# 0x000055F5827E8C84 in /workspace/gem5-aladdin/build/X86/gem5.opt
+11# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+12# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+13# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+14# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+15# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+16# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+17# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+18# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+19# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+20# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+21# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+22# PyEval_EvalFrameEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+23# PyEval_EvalCodeEx in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+24# PyEval_EvalCode in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+25# PyRun_StringFlags in /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0
+26# m5Main(int, char**) in /workspace/gem5-aladdin/build/X86/gem5.opt
+27# main in /workspace/gem5-aladdin/build/X86/gem5.opt
+28# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+29# _start in /workspace/gem5-aladdin/build/X86/gem5.opt
+
+here
+Avg MEM Power: 468.979 mW
+Avg MEM Dynamic Power: 450.068 mW
+Avg MEM Leakage Power: 18.911 mW
+Total Area: 1.3799e+06 uM^2
+FU Area: 240010 uM^2
+MEM Area: 1.13989e+06 uM^2
+Num of Multipliers (32-bit): 6
+Num of Adders (32-bit): 128
+Num of Bit-wise Operators (32-bit): 33
+Num of Shifters (32-bit): 14
+Num of Registers (32-bit): 49
+===============================
+        Aladdin Results        
+===============================

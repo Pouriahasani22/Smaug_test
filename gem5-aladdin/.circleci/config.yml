@@ -26,6 +26,11 @@ jobs:
             EOF
             python2.7 `which scons` build/X86/gem5.opt PROTOCOL=MESI_Two_Level_aladdin --ignore-style -j2
       - run:
+          name: Running unit tests
+          command: |
+            cd src/systolic_array/unit_test
+            make test
+      - run:
           name: Running integration tests
           command: |
             python3 src/aladdin/integration-test/common/run_cpu_tests.py
@@ -44,3 +49,20 @@ jobs:
             - build/X86
       - store_artifacts:
           path: build/X86/gem5.opt
+
+workflows:
+  version: 2
+  compile:
+    jobs:
+      - build
+
+  weekly:
+    jobs:
+      - build
+    triggers:
+      - schedule:
+          # Rebuild every Sunday at midnight to keep the artifacts fresh.
+          cron: 0 0 * * 0
+          filters:
+            branches:
+              only: master

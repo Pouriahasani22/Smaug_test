@@ -38,7 +38,7 @@ $(BUILD_DIR)/bin/$(EXEC): $(BUILD_SRCS_OBJS) $(BUILD_MAIN_OBJ)
 	$(CXX) $^ $(LFLAGS) -o $@
 
 %.o: %.cpp
-	$(CXX) -c $(CXXFLAGS) $(INCLUDES) $^ -o $@
+	$(CXX) -c $(CXXFLAGS) -g $(INCLUDES) $^ -o $@
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) $(INCLUDES) $^ -o $@

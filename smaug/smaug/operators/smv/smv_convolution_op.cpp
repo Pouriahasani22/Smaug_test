@@ -5,7 +5,8 @@
 #include "smaug/operators/smv/smv_kernels.h"
 #include "smaug/operators/smv/smv_accel_pool.h"
 #include "smaug/utility/debug_stream.h"
-
+#include <cstdio>
+#include <fstream>
 namespace smaug {
 namespace smv {
 namespace conv {
@@ -122,9 +123,12 @@ void SmvConvolutionOp::runNHWC(TiledTensor& inputs,
                     // finish the weight channelwise tiles, with the same input
                     // channel tile, producing results for the same output
                     // channels.
+                    std::cout<< "kire khar"<<std::endl;
+
                     while (iC < inputChanTiles && wC < weightChanTiles) {
                         int inputTileIdx = inputIdx(N, H, 0, iC);
                         int weightTileIdx = weightIdx(W, 0, 0, wC);
+
                         dout(1) << "Input: " << inputTileIdx
                                 << ", weights: " << weightTileIdx
                                 << ", output: " << outputTileIdx << "\n";
@@ -150,6 +154,37 @@ void SmvConvolutionOp::runNHWC(TiledTensor& inputs,
                                                weightsShape[3] };
                         int outputDims[4] = { outputShape[0], outputShape[1],
                                               outputShape[2], outputShape[3] };
+                        std::cout <<"\n*Convolution"<<std::endl;
+//                        std::ofstream summary_file;
+//                        summary_file.open("./outputs/nnet_fwd_summary_5",std::ios::app);
+//                        if(!summary_file.fail()) {
+//                            summary_file << "\n******Accelerator Id: " << accelId + currAccelIdx << "*****"
+//                                         << std::endl;
+//                            summary_file << "inputTileIdx: " << inputTileIdx << ",\t";
+//                            summary_file << "weightTileIdx: " << weightTileIdx << ",\t";
+//                            summary_file << "outputTileIdx: " << outputTileIdx << std::endl;
+//#if 1
+//                            summary_file << "input Tile dimension: ";
+//                            for (int j{0}; j < 4; j++) {
+//                                if (inputDims != NULL)
+//                                    summary_file << "[" << j << "]: " << inputDims[j] << "\t";
+//                            }
+//                            summary_file << "\nweight tile dimension: ";
+//                            for (int j{0}; j < 4; j++) {
+//                                if (weightsDims != NULL)
+//                                    summary_file << "[" << j << "]: " << weightsDims[j] << "\t";
+//                            }
+//                            summary_file << "\noutput tile dimension: ";
+//                            for (int j{0}; j < 4; j++) {
+//                                if (outputDims != NULL)
+//                                    summary_file << "[" << j << "]: " << outputDims[j] << "\t";
+//                            }
+//                            summary_file << std::endl;
+//#endif
+//                        }
+//                        else
+//                            std::cout << "failed to write to summary file"<<std::endl;
+//                    summary_file.close();
                         // The 'ifmap_start' argument of the kernel is for
                         // handling when inputChanTiles < weightChanTiles. It
                         // provides the starting channel of the input tile that
